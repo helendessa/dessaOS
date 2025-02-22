@@ -1,30 +1,4 @@
-/* light theme */
-.light-theme {
-    --background-color: #F0F0F0;
-    --text-color: #2C2C2C;
-    --primary-color: #4B0082;
-    --secondary-color: #8A56AC;
-    --button-background: #4B0082;
-    --button-hover: #8A56AC;
-    --login-background: #fff;
-    --input-background: #fff;
-    --input-border: #ccc;
-    --login-title-color: #4B0082;
-}
-
-/* dark theme */
-.dark-theme {
-    --background-color: #1E1E1E;
-    --text-color: #E0E0E0;
-    --primary-color: #8A56AC;
-    --secondary-color: #4B0082;
-    --button-background: #8A56AC;
-    --button-hover: #4B0082;
-    --login-background: #2C2C2C;
-    --input-background: #3C3C3C;
-    --input-border: #555;
-    --login-title-color: #D8BFD8;
-}
+@import url('themes.css');
 
 html, body {
     margin: 0;

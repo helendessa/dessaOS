@@ -1,3 +1,5 @@
+@import url('themes.css');
+
 html, body {
     height: 100%;
     margin: 0;
@@ -7,10 +9,10 @@ html, body {
 }
 
 body {
-    background-color: #F0F0F0;
+    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
-    color: #2C2C2C;
+    color: var(--text-color);
 }
 
 .desktop {
@@ -26,8 +28,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #4B0082;
-    color: #FFFFFF;
+    background: var(--taskbar-background);
+    color: var(--taskbar-text-color);
     padding: 5px;
     position: fixed;
     width: 100%;
@@ -43,7 +45,10 @@ body {
 }
   
 .taskbar-right {
-    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
 }
   
 .open-programs {
@@ -54,7 +59,7 @@ body {
 .menu-button {
     background: none;
     border: none;
-    color: #FFFFFF;
+    color: var(--taskbar-text-color);
     font-size: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -74,8 +79,8 @@ body {
     bottom: 50px;
     left: 10px;
     width: 250px;
-    background: linear-gradient(to bottom, #e7d8f1, #f5efff); /* gradiente suave */
-    border: 1px solid #B17df8;
+    background: var(--menu-background);
+    border: 1px solid var(--menu-border-color);
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     padding: 10px;
@@ -99,8 +104,8 @@ body {
     gap: 10px;
     text-align: left;
     font-size: 16px;
-    background: #8A56AC;
-    color: #FFFFFF;
+    background: var(--menu-button-background);
+    color: var(--menu-button-text-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -108,7 +113,7 @@ body {
 }
 
 .menu button:hover {
-    background: #7A469C;
+    background: var(--menu-button-hover-background);
     transform: scale(1.05);
 }
 
@@ -137,7 +142,7 @@ body {
 .icon {
     width: 50px;
     height: 50px;
-    background: rgba(75, 0, 130, 0.8);
+    background: var(--icon-background);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -152,8 +157,8 @@ body {
 }
 
 .window {
-    background: #FFFFFF;
-    border: 1px solid #4B0082;
+    background: var(--window-background);
+    border: 1px solid var(--window-border-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     max-width: none;
@@ -176,8 +181,8 @@ body {
 }
 
 .window-header {
-    background: #4B0082;
-    color: #FFFFFF;
+    background: var(--window-header-background);
+    color: var(--window-header-text-color);
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -214,7 +219,7 @@ body {
     width: 16px;
     height: 16px;
     fill: none;
-    stroke: #FFFFFF;
+    stroke: var(--window-header-text-color);
 }
 
 .window-buttons button:hover {
@@ -234,11 +239,29 @@ body {
 
 .content-section h2 {
     font-family: 'Tahoma', sans-serif;
-    color: #4B0082;
+    color: var(--primary-color);
     margin-top: 0;
 }
 
 .content-section p {
     font-family: Arial, Helvetica, sans-serif;
-    color: #2C2C2C;
+    color: var(--text-color);
+}
+
+.theme-button {
+    background: var(--button-background);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    transition: background 0.3s ease;
+}
+
+.theme-button:hover {
+    background: var(--button-hover);
+}
+
+.theme-button img {
+    width: 24px;
+    height: 24px;
 }
