@@ -18,6 +18,7 @@ body {
 .desktop {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -139,20 +140,42 @@ body {
     transform: scale(1.1);
 }
 
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: var(--text-color);
+    margin: 10px;
+    gap: 5px;
+}
+
 .icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: var(--icon-background);
-    border-radius: 10px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    position: absolute;
-    transition: transform 0.3s ease;
 }
 
-.icon:hover {
+.icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.icon-container p {
+    margin: 1px 0 0 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.icon-container:hover {
     transform: scale(1.1);
 }
 
