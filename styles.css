@@ -1,184 +1,235 @@
-html {
+html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tahoma', sans-serif;
+    overflow: hidden;
 }
 
 body {
-    min-height: 100vh;
-    background-image: url('galaxy.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+    background-color: #F0F0F0;
     display: flex;
     flex-direction: column;
-    position: relative;
+    color: #2C2C2C;
 }
 
-.nova-round-regular {
-    font-family: "Nova Round", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.agdasima-regular {
-    font-family: "Agdasima", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.agdasima-bold {
-    font-family: "Agdasima", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-h1 {
-    font-family: 'Nova Round', sans-serif;
-    color: #ffd700;
-    text-align: center;
-    position: relative;
-}
-
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
-    position: relative;
-    text-shadow: 2px 2px 4px;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-#welcome {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    font-family: 'Agdasima', sans-serif;
-    position: relative;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Control panel */
-.control-panel {
+.desktop {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
-    max-width: 500px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     position: relative;
 }
 
-/* Generic button */
-.control-panel button,
-header nav button {
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    padding: 10px;
-    font-family: 'Agdasima', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    color: #fff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.taskbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4B0082;
+    color: #FFFFFF;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+  
+.taskbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+  
+.taskbar-right {
+    margin-right: 10px;
+}
+  
+.open-programs {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-button {
+    background: none;
     border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    margin: 5px;
-    position: relative;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.control-panel button:hover,
-header nav button:hover {
+.menu-button img {
+    vertical-align: middle;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    width: 200px;
+    background: #FFFFFF;
+    border: 1px solid #4B0082;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.menu.show {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.menu button {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+    background: #4B0082;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu button:hover {
+    background: #800080;
     transform: scale(1.05);
 }
 
-/* Specific button styles */
-#btn-login,
-header nav button:nth-child(1) {
-    background: linear-gradient(145deg, #ffdb19, #b68600);
-    color: #000;
-    border: 2px solid #b68600;
+.open-programs {
+    display: flex;
+    gap: 10px;
 }
 
-#btn-login:hover,
-header nav button:nth-child(1):hover {
-    background: linear-gradient(145deg, #ffdb19, #ffdb19);
-    border: 2px solid #ffdb19;
+.open-programs img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-#btn-register,
-header nav button:nth-child(2) {
-    background: linear-gradient(145deg, #ff4e50, #b22222);
-    color: #fff;
-    border: 2px solid #b22222;
+.open-programs img:hover {
+    transform: scale(1.1);
 }
 
-#btn-register:hover,
-header nav button:nth-child(2):hover {
-    background: linear-gradient(145deg, #ff4e50, #ff4e50);
-    border: 2px solid #ff4e50;
-}
-
-#btn-about,
-header nav button:nth-child(3) {
-    background: linear-gradient(145deg, #36d1dc, #5b86e5);
-    color: #fff;
-    border: 2px solid #5b86e5;
-}
-
-#btn-about:hover,
-header nav button:nth-child(3):hover {
-    background: linear-gradient(145deg, #36d1dc, #36d1dc);
-    border: 2px solid #36d1dc;
-}
-
-/* Header styles */
-header {
-    background: rgba(128, 128, 128, 0.9);
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-header nav {
+.icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(75, 0, 130, 0.8);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.3s ease;
 }
 
-/* Main content styles */
-main {
-    text-align: center;
-    padding: 80px 20px 20px;
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.window {
+    background: #FFFFFF;
+    border: 1px solid #4B0082;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: none;
+    width: 90%;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    resize: both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.window.maximized {
+    margin: 0;
+    border-radius: 0;
+    width: 100% !important;
+    height: calc(100% - 40px) !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.window-header {
+    background: #4B0082;
+    color: #FFFFFF;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.window-header h1 {
+    margin: 0;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 16px;
+}
+
+.window-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.window-buttons button {
+    width: 25px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.window-buttons button svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: #FFFFFF;
+}
+
+.window-buttons button:hover {
+    background: rgba(75, 0, 130, 0.2);
+    transform: scale(1.1);
+}
+
+.window-content {
+    padding: 20px;
+    overflow-y: auto;
     flex: 1;
-    position: relative;
 }
 
-#features {
-    margin-top: 40px;
+.content-section {
+    margin-bottom: 20px;
 }
 
-/* Footer styles */
-footer {
-    background: rgba(128, 128, 128, 0.9);
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: relative;
+.content-section h2 {
+    font-family: 'Tahoma', sans-serif;
+    color: #4B0082;
+    margin-top: 0;
+}
+
+.content-section p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2C2C2C;
 }
