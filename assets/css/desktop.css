@@ -73,10 +73,11 @@ body {
     position: absolute;
     bottom: 50px;
     left: 10px;
-    width: 200px;
-    background: #FFFFFF;
-    border: 1px solid #4B0082;
-    border-radius: 10px;
+    width: 250px;
+    background: linear-gradient(to bottom, #e7d8f1, #f5efff); /* gradiente suave */
+    border: 1px solid #B17df8;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -92,21 +93,29 @@ body {
 
 .menu button {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    align-items: center;
+    gap: 10px;
     text-align: left;
     font-size: 16px;
-    background: #4B0082;
+    background: #8A56AC;
     color: #FFFFFF;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .menu button:hover {
-    background: #800080;
+    background: #7A469C;
     transform: scale(1.05);
+}
+
+.divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 8px 0;
 }
 
 .open-programs {
