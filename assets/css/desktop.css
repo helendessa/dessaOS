@@ -149,7 +149,7 @@ body {
     transition: transform 0.3s ease;
     text-align: center;
     color: var(--text-color);
-    margin: 10px;
+    margin: 5px; /* gap between icons */
     gap: 5px;
 }
 
@@ -169,14 +169,30 @@ body {
     border-radius: 50%;
 }
 
-.icon-container p {
-    margin: 1px 0 0 0;
-    font-size: 12px;
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
     text-align: center;
+    color: var(--text-color);
+    gap: 5px; /* keeps icon and text close */
 }
 
 .icon-container:hover {
     transform: scale(1.1);
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 2px; /* space between icon items */
+    padding: 5px; /* controls distance from the edge of the desktop */
+}
+
+.icon-grid .icon-container {
+    position: static;
 }
 
 .window {
