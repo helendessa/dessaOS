@@ -14,18 +14,19 @@
     --footer-background: #4B0082;
 
     /* Desktop specific */
-    --taskbar-background: #4B0082;
+    --taskbar-background: #8A56AC;
     --taskbar-text-color: #FFFFFF;
     --menu-background: linear-gradient(to bottom, #e7d8f1, #f5efff);
     --menu-border-color: #B17df8;
     --menu-button-background: #8A56AC;
-    --menu-button-text-color: #FFFFFF;
     --menu-button-hover-background: #7A469C;
     --icon-background: rgba(75, 0, 130, 0.8);
+    --icon-text-color: #4B0082;
     --window-background: #FFFFFF;
     --window-border-color: #4B0082;
-    --window-header-background: #4B0082;
+    --window-header-background: #8A56AC;
     --window-header-text-color: #FFFFFF;
+    --desktop-wallpaper: url('../images/light-galaxy-wallpaper.png');
 }
 
 /* dark theme */
@@ -43,17 +44,19 @@
     --header-background: #8A56AC;
     --footer-background: #8A56AC;
 
-    /* Desktop specific */
-    --taskbar-background: #8A56AC;
+    /* Desktop specific  */
+    --taskbar-background: #4B0082;
     --taskbar-text-color: #FFFFFF;
     --menu-background: linear-gradient(to bottom, #3C3C3C, #2C2C2C);
     --menu-border-color: #555;
     --menu-button-background: #4B0082;
-    --menu-button-text-color: #FFFFFF;
     --menu-button-hover-background: #3C3C3C;
+    
     --icon-background: rgba(138, 86, 172, 0.8);
+    --icon-text-color: #fff;
     --window-background: #2C2C2C;
     --window-border-color: #8A56AC;
-    --window-header-background: #8A56AC;
+    --window-header-background: #4B0082;
     --window-header-text-color: #FFFFFF;
+    --desktop-wallpaper: url('../images/dark-galaxy-wallpaper.png');
 }
