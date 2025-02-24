@@ -1,65 +1,78 @@
 /* light theme */
 .light-theme {
-    --background-color: #F0F0F0;
-    --text-color: #2C2C2C;
+    --background-color: #FFFFFF;
+    --text-color: #000000;
     --primary-color: #4B0082;
     --secondary-color: #8A56AC;
     --button-background: #4B0082;
     --button-hover: #8A56AC;
-    --login-background: #fff;
-    --input-background: #fff;
-    --input-border: #ccc;
+    --login-background: #FFFFFF;
+    --input-background: #FFFFFF;
+    --input-border: #CCCCCC;
     --login-title-color: #4B0082;
     --header-background: #4B0082;
     --footer-background: #4B0082;
 
     /* Desktop specific */
-    --taskbar-background: #8A56AC;
+    --taskbar-background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
     --taskbar-text-color: #FFFFFF;
-    --menu-background: linear-gradient(to bottom, #e7d8f1, #f5efff);
-    --menu-border-color: #B17df8;
-    --menu-button-background: #8A56AC;
-    --menu-button-hover-background: #7A469C;
-    --icon-background: rgba(75, 0, 130, 0.8);
-    --icon-text-color: #4B0082;
-    --window-background: #FFFFFF;
+    --taskbar-border-color: #333333;
+    --menu-background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+    --menu-border-color: #999999;
+    --menu-button-background: linear-gradient(to bottom, #E0E0E0, #C0C0C0);
+    --menu-button-hover-background: linear-gradient(to bottom, #D0D0D0, #B0B0B0);
+    --menu-button-text-color: #FFFFFF;
+    --menu-header-background: linear-gradient(to bottom, #C0C0C0, #A0A0A0);
+    --menu-header-text-color: #FFFFFF;
+    --icon-border-color: #4B0082;
+    --icon-hover-background: linear-gradient(to bottom, #D0D0D0, #B0B0B0);
+    --icon-text-color: #000000;
+    --window-background: linear-gradient(to bottom, #FFFFFF, #E0E0E0);
     --window-border-color: #4B0082;
-    --window-header-background: #8A56AC;
+    --window-header-background: linear-gradient(to bottom, #C0C0C0, #A0A0A0);
     --window-header-text-color: #FFFFFF;
     --desktop-wallpaper: url('../images/light-galaxy-wallpaper.png');
-    --scrollbar-track: #f0f0f0;
-    --scrollbar-thumb: #c0c0c0;
+    --scrollbar-track: #F0F0F0;
+    --scrollbar-thumb: #CCCCCC;
 }
 
 /* dark theme */
 .dark-theme {
-    --background-color: #1E1E1E;
+    --background-color: #000000;
     --text-color: #E0E0E0;
-    --primary-color: #8A56AC;
-    --secondary-color: #4B0082;
-    --button-background: #8A56AC;
-    --button-hover: #4B0082;
-    --login-background: #2C2C2C;
-    --input-background: #3C3C3C;
-    --input-border: #555;
+    --primary-color: #1A1A1A;
+    --secondary-color: #4A4A4A;
+    --button-background: #1A1A1A;
+    --button-hover: #4A4A4A;
+    --login-background: #1A1A1A;
+    --input-background: #2A2A2A;
+    --input-border: #555555;
     --login-title-color: #D8BFD8;
-    --header-background: #8A56AC;
-    --footer-background: #8A56AC;
+    --header-background: #1A1A1A;
+    --footer-background: #1A1A1A;
 
     /* Desktop specific  */
-    --taskbar-background: #4B0082;
+    --taskbar-background: linear-gradient(to bottom, #1A1A1A, #4A4A4A);
     --taskbar-text-color: #FFFFFF;
-    --menu-background: linear-gradient(to bottom, #3C3C3C, #2C2C2C);
-    --menu-border-color: #555;
-    --menu-button-background: #4B0082;
-    --menu-button-hover-background: #3C3C3C;
-    --icon-background: rgba(138, 86, 172, 0.8);
-    --icon-text-color: #fff;
-    --window-background: #2C2C2C;
-    --window-border-color: #8A56AC;
-    --window-header-background: #4B0082;
+    --taskbar-border-color: #555555;
+    --menu-background: linear-gradient(to bottom, #1A1A1A, #4A4A4A);
+    --menu-border-color: #555555;
+    --menu-button-background: linear-gradient(to bottom, #1A1A1A, #4A4A4A);
+    --menu-button-hover-background: linear-gradient(to bottom, #2A2A2A, #5A5A5A);
+    --menu-button-text-color: #FFFFFF;
+    --menu-header-background: linear-gradient(to bottom, #1A1A1A, #4A4A4A);
+    --menu-header-text-color: #FFFFFF;
+    --icon-border-color: #555555;
+    --icon-hover-background: linear-gradient(to bottom, #2A2A2A, #5A5A5A);
+    --icon-text-color: #FFFFFF;
+    --window-background: linear-gradient(to bottom, #1A1A1A, #4A4A4A);
+    --window-border-color: #333333;
+    --window-header-background: linear-gradient(to bottom, #2A2A2A, #5A5A5A);
     --window-header-text-color: #FFFFFF;
-    --desktop-wallpaper: url('../images/dark-galaxy-wallpaper.png');
-    --scrollbar-track: #2c2c2c;
+    --desktop-wallpaper: url('../images/bmth-wallpaper.jpeg');
+    --scrollbar-track: #2A2A2A;
     --scrollbar-thumb: #555555;
+
+    background-size: cover;
+    background-position: center;
 }

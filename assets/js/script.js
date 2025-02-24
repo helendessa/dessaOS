@@ -11,28 +11,23 @@ function toggleMenu() {
 // display the window, update its title,
 // and create an icon in the toolbar
 function openWindow(title, iconPath = 'icon.png', contentPath = '') {
-    // create a new window element
     const windowElement = document.createElement('div');
     windowElement.classList.add('window');
     windowElement.innerHTML = `
         <div class="window-header">
-            <h1>${title}</h1>
+            <div class="window-title">
+                <img src="${iconPath}" alt="${title} icon">
+                <h1>${title}</h1>
+            </div>
             <div class="window-buttons">
                 <button onclick="minimizeWindow(this)">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="6" y="18" width="12" height="2" fill="#F0F0F0"/>
-                    </svg>
+                    <img src="../assets/images/minimize-icon.ico" alt="Minimize">
                 </button>
                 <button onclick="maximizeWindow(this)">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="4" y="4" width="16" height="16" fill="none" stroke="#F0F0F0" stroke-width="2"/>
-                    </svg>
+                    <img src="../assets/images/maximize-icon.ico" alt="Maximize">
                 </button>
                 <button onclick="closeWindow(this)">
-                    <svg viewBox="0 0 24 24">
-                        <line x1="6" y1="6" x2="18" y2="18" stroke="#F0F0F0" stroke-width="2"/>
-                        <line x1="6" y1="18" x2="18" y2="6" stroke="#F0F0F0" stroke-width="2"/>
-                    </svg>
+                    <img src="../assets/images/close-icon.ico" alt="Close">
                 </button>
             </div>
         </div>
@@ -81,7 +76,7 @@ function openWindow(title, iconPath = 'icon.png', contentPath = '') {
     // make the window draggable
     makeWindowDraggable(windowElement);
     // make the window resizable
-     makeWindowResizable(windowElement);
+    makeWindowResizable(windowElement);
 }
 
 // close the window and remove its icon from the toolbar

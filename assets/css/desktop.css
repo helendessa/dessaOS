@@ -1,10 +1,11 @@
 @import url('themes.css');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Tahoma', sans-serif;
+    font-family: 'Comic Neue', sans-serif;
     overflow: hidden;
 }
 
@@ -37,6 +38,7 @@ body {
     bottom: 0;
     z-index: 1000;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    border-top: 2px solid var(--taskbar-border-color);
 }
   
 .taskbar-left {
@@ -50,11 +52,40 @@ body {
     align-items: center;
     gap: 10px;
     margin-right: 15px;
+    font-family: 'Comic Neue', sans-serif;
 }
   
 .open-programs {
     display: flex;
     gap: 10px;
+}
+
+/* menu button */
+.menu-button {
+    background: var(--menu-button-background);
+    border: 2px solid var(--menu-border-color);
+    color: var(--menu-button-text-color);
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.menu-button img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.menu-button span {
+    margin-left: 5px;
+}
+
+.menu-button:hover {
+    background: var(--menu-button-hover-background);
 }
 
 /* menu */
@@ -65,13 +96,15 @@ body {
     left: 10px;
     width: 300px;
     background: var(--menu-background);
-    border: 1px solid var(--menu-border-color);
-    border-radius: 5px;
+    border: 2px solid var(--menu-border-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(10px);
     opacity: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .menu.show {
@@ -86,9 +119,10 @@ body {
     padding: 10px;
     background: var(--menu-header-background);
     color: var(--menu-header-text-color);
-    border-bottom: 1px solid var(--menu-border-color);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom: 2px solid var(--menu-border-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Comic Neue', sans-serif;
 }
 
 .menu-header img {
@@ -119,10 +153,10 @@ body {
     font-size: 16px;
     background: var(--menu-button-background);
     color: var(--menu-button-text-color);
-    border: none;
-    border-radius: 5px;
+    border: 2px solid var(--menu-border-color);
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    font-family: 'Comic Neue', sans-serif;
 }
 
 .menu button img {
@@ -130,13 +164,16 @@ body {
     height: 20px;
 }
 
+.menu button span {
+    flex-grow: 1;
+}
+
 .menu button:hover {
     background: var(--menu-button-hover-background);
-    transform: scale(1.05);
 }
 
 .divider {
-    height: 1px;
+    height: 2px;
     background: rgba(255, 255, 255, 0.3);
     margin: 8px 0;
 }
@@ -150,7 +187,6 @@ body {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
 .open-programs img:hover {
@@ -163,37 +199,32 @@ body {
     align-items: center;
     position: absolute;
     cursor: pointer;
-    transition: transform 0.3s ease;
     text-align: center;
     color: var(--text-color);
-    margin: 5px; /* gap between icons */
+    margin: 5px;
 }
 
 .icon {
-    width: 60px;
-    height: 60px;
-    background: var(--icon-background);
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
 .icon img {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
 }
 
-.icon-container:hover {
+.icon-container:hover .icon {
     transform: scale(1.1);
 }
 
 .icon-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 2px; /* space between icon items */
-    padding: 25px; /* controls distance from the edge of the desktop */
+    gap: 15px;
+    padding: 25px;
 }
 
 .icon-grid .icon-container {
@@ -203,15 +234,14 @@ body {
 .icon-container p {
     margin: 3px;
     font-size: 14px;
-    text-shadow: #000;
+    text-shadow: 1px 1px 2px #000;
     color: var(--icon-text-color);
     font-weight: bold;
 }
 
 .window {
     background: var(--window-background);
-    border: 1px solid var(--window-border-color);
-    border-radius: 10px;
+    border: 2px solid var(--window-border-color);
     box-shadow: 8px 4px 8px rgba(0, 0, 0, 1);
     max-width: none;
     width: 90%;
@@ -219,17 +249,15 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /*resize: both;*/
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    z-index: 900;
 }
 
 .resize-handle {
     position: absolute;
     width: 10px;
     height: 10px;
-    /*background: rgba(0, 0, 0, 0.2);*/
     color: transparent;
-    border-radius: 50%;
     z-index: 1;
 }
 
@@ -239,7 +267,6 @@ body {
     cursor: nwse-resize;
     z-index: 1;
     color: transparent;
-
 }
 
 .top-right {
@@ -268,7 +295,6 @@ body {
 
 .window.maximized {
     margin: 0;
-    border-radius: 0;
     width: 100% !important;
     height: calc(100% - 40px) !important;
     top: 0 !important;
@@ -284,11 +310,30 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: move;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom: 2px solid var(--window-border-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Comic Neue', sans-serif;
 }
 
 .window-header h1 {
+    margin: 0;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 16px;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.window-title img {
+    width: 16px;
+    height: 16px;
+}
+
+.window-title h1 {
     margin: 0;
     font-family: 'Tahoma', sans-serif;
     font-size: 16px;
@@ -311,11 +356,9 @@ body {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.window-buttons button svg {
+.window-buttons button img {
     width: 16px;
     height: 16px;
-    fill: none;
-    stroke: var(--window-header-text-color);
 }
 
 .window-buttons button:hover {
@@ -329,7 +372,7 @@ body {
     flex: 1;
     max-height: calc(100vh - 100px);
     scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-color: var(--scrollbar-thumb) var (--scrollbar-track);
 }
 
 .window-content::-webkit-scrollbar {
@@ -338,13 +381,11 @@ body {
 
 .window-content::-webkit-scrollbar-track {
     background: var(--scrollbar-track);
-    border-radius: 10px;
 }
 
 .window-content::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb);
-    border-radius: 10px;
-    border: 3px solid var(--scrollbar-track);
+    border: 2px solid var (--scrollbar-track);
 }
 
 .content-section {
@@ -352,23 +393,23 @@ body {
 }
 
 .content-section h2 {
-    font-family: 'Tahoma', sans-serif;
+    font-family: 'Comic Neue', sans-serif;
     color: var(--primary-color);
     margin-top: 0;
 }
 
 .content-section p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Comic Neue', sans-serif;
     color: var(--text-color);
 }
 
 .theme-button {
     background: var(--button-background);
     border: none;
-    border-radius: 50%;
     cursor: pointer;
     padding: 5px;
-    transition: background 0.3s ease;
+    border-radius: 5px;
+    font-family: 'Comic Neue', sans-serif;
 }
 
 .theme-button:hover {

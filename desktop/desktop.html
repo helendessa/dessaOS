@@ -2,30 +2,32 @@
 <html>
 <head>
     <link href="../assets/css/desktop.css" rel="stylesheet">
-    <title>LingoOS</title>
+    <title>DessaOS</title>
     <link href="../assets/images/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="desktop">
         <header class="taskbar">
             <div class="taskbar-left">
               <button class="menu-button" onclick="toggleMenu()">
-                <img src="../assets/images/menu-icon.svg" alt="Menu" width="20" height="20">
+                <img src="../assets/images/menu-icon.png" alt="Menu" width="20" height="20">
+                <span>MENU</span>
               </button>
               <nav id="menu" class="menu">
                 <div class="menu-header">
-                  <img src="../assets/images/menu-icon.svg" alt="Menu Icon">
+                  <img src="../assets/images/menu-icon.png" alt="Menu Icon">
                   <span>Start Menu</span>
                 </div>
                 <div class="menu-content">
                   <div class="menu-left">
-                    <button onclick="openWindow('Grammar', '../assets/images/grammar-icon.svg', 'grammar.html')">
-                      <img src="../assets/images/grammar-icon.svg" alt="Grammar Icon">
-                      Grammar
+                    <button onclick="openWindow('projects.doc', '../assets/images/doc-icon.ico', 'projects.html')">
+                      <img src="../assets/images/doc-icon.ico" alt="Grammar Icon">
+                      projects.doc
                     </button>
                     <button onclick="openWindow('Vocab', '../assets/images/vocab-icon.svg', 'vocab.html')">
                       <img src="../assets/images/vocab-icon.svg" alt="Vocab Icon">
@@ -35,9 +37,9 @@
                       <img src="../assets/images/books-icon.svg" alt="Books Icon">
                       Books
                     </button>
-                    <button onclick="openWindow('LingoOS', '../assets/images/info-icon.svg', 'info.html')">
-                        <img src="../assets/images/info-icon.svg" alt="Info Icon">
-                        LingoOS
+                    <button onclick="openWindow('about_me.doc', '../assets/images/doc-icon.ico', 'info.html')">
+                        <img src="../assets/images/doc-icon.ico" alt="Info Icon">
+                        about_me.doc
                     </button>
                   </div>
                   <div class="menu-right">
@@ -72,17 +74,17 @@
         </header>
 
         <div class="icon-grid">
-            <div class="icon-container" onclick="openWindow('Grammar', '../assets/images/grammar-icon.svg', 'grammar.html')">
+            <div class="icon-container" onclick="openWindow('Projects', '../assets/images/folder-icon', 'projects.html')">
               <div class="icon">
-                <img src="../assets/images/grammar-icon.svg" alt="Grammar Icon" width="40" height="40">
+                <img src="../assets/images/folder-icon.ico" alt="Folder Icon" width="40" height="40">
               </div>
-              <p>Grammar</p>
+              <p>Projects</p>
             </div>
             <div class="icon-container" onclick="openWindow('Vocab', '../assets/images/vocab-icon.svg', 'vocab.html')">
               <div class="icon">
                 <img src="../assets/images/vocab-icon.svg" alt="Vocab Icon" width="40" height="40">
               </div>
-              <p>Vocab</p>
+              <p>Music</p>
             </div>
             <div class="icon-container" onclick="openWindow('Books', '../assets/images/books-icon.svg', 'books.html')">
               <div class="icon">
@@ -90,11 +92,11 @@
               </div>
               <p>Books</p>
             </div>
-            <div class="icon-container" onclick="openWindow('LingoOS', '../assets/images/info-icon.svg', 'info.html')">
+            <div class="icon-container" onclick="openWindow('About Me', '../assets/images/doc-icon.ico', 'info.html')">
               <div class="icon">
-                <img src="../assets/images/info-icon.svg" alt="Info Icon" width="40" height="40">
+                <img src="../assets/images/doc-icon.ico" alt="Info Icon" width="40" height="40">
               </div>
-              <p>LingoOS</p>
+              <p>About_Me.doc</p>
             </div>
           </div>
 

@@ -2,107 +2,113 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>About LingoOS</title>
+  <title>About Helen</title>
   <link rel="stylesheet" href="../assets/css/info.css">
+  <link rel="stylesheet" href="../assets/css/info-page.css">
   <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body class="light-theme">
-  <header>
-    <h1>About LingoOS</h1>
-    <nav>
-      <a href="desktop.html" onclick="loadContent(event, 'desktop.html')">Home</a>
-      <a href="info.html" onclick="loadContent(event, 'info.html')">About</a>
-    </nav>
-  </header>
-  <main id="content">
-    <section>
-      <h2>Our Mission</h2>
-      <p>At LingoOS, our mission is to make language learning accessible, engaging, and effective for everyone. We believe that learning a new language should be a fun and rewarding experience.</p>
-    </section>
-    <section>
-      <h2>Features</h2>
-      <ul>
-        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
-        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
-        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
-        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
-        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
-        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
-        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
-        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
-        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
-      </ul>
-    </section>
-    <section>
-      <h2>How It Works</h2>
-      <p>LingoOS provides a virtual desktop environment where you can access various language learning tools and resources. Simply log in, explore the features, and start your language learning journey.</p>
-    </section>
-    <section>
-      <h2>Contact Us</h2>
-      <p>If you have any questions or feedback, feel free to <a href="mailto:support@lingoos.com">contact us</a>.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2023 LingoOS. All rights reserved.</p>
-  </footer>
-  <button id="theme-toggle">
-    <img id="theme-icon" src="../assets/images/dark-theme-icon.svg" alt="Toggle Theme" width="24" height="24">
-  </button>
-  <script src="../assets/js/theme.js"></script>
-  <script>
-    function loadContent(event, url) {
-      event.preventDefault();
-      fetch(url)
-        .then(response => response.text())
-        .then(data => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(data, 'text/html');
-          const newContent = doc.querySelector('#content').innerHTML;
-          document.getElementById('content').innerHTML = newContent;
-        })
-        .catch(error => console.error('Error loading content:', error));
-    }
+  <div class="word-container">
+    <div class="word-document">
+      <header class="word-toolbar">
+        <div class="toolbar-section">
+          <select class="font-select">
+            <option>Times New Roman</option>
+            <option>Arial</option>
+            <option>Calibri</option>
+          </select>
+          <select class="font-size-select">
+            <option>12</option>
+            <option>14</option>
+            <option>16</option>
+            <option>18</option>
+            <option>20</option>
+            <option>24</option>
+          </select>
+        </div>
+        <div class="toolbar-section">
+          <button class="toolbar-button">
+            <img src="../assets/images/save-icon.png" alt="Save" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/print-icon.png" alt="Print" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/undo-icon.png" alt="Undo" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/redo-icon.png" alt="Redo" width="20" height="20">
+          </button>
+        </div>
+        <div class="toolbar-section">
+          <button class="toolbar-button">
+            <img src="../assets/images/bold-icon.png" alt="Bold" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/italic-icon.png" alt="Italic" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/underline-icon.png" alt="Underline" width="20" height="20">
+          </button>
+        </div>
+        <div class="toolbar-section">
+          <button class="toolbar-button">
+            <img src="../assets/images/align-left-icon.png" alt="Align Left" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/align-center-icon.png" alt="Align Center" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/align-right-icon.png" alt="Align Right" width="20" height="20">
+          </button>
+          <button class="toolbar-button">
+            <img src="../assets/images/align-justify-icon.png" alt="Align Justify" width="20" height="20">
+          </button>
+        </div>
+      </header>
+      <div class="document">
+        <header>
+          <h1>About Me</h1>
+        </header>
+        <main id="content">
+          <section>
+            <h2>Who Am I</h2>
+            <p>Hello! My name is Helen, and I'm a 5th semester Computer Science student at IFSULDEMINAS (Federal Institute of Education, Science and Technology of South Minas Gerais). I'm passionate about web development and constantly learning new technologies to build innovative solutions.</p>
+          </section>
+          <section>
+            <h2>My Skills</h2>
+            <ul>
+              <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+              <li><strong>Currently Learning:</strong> React, Node.js</li>
+              <li><strong>Tools:</strong> Git, VS Code</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Projects</h2>
+            <ul>
+              <li><strong>100 Days of Code:</strong> A personal challenge to code daily and document my web development learning journey.</li>
+              <li><strong>Portfolio:</strong> A personal website showcasing my academic projects and learning progress.</li>
+              <li><strong>College Projects:</strong> Various academic assignments and collaborative projects developed during my Computer Science course.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Education</h2>
+          </section>
+          <section>
+            <h2>Experience</h2>
+          </section>
+          <section>
+            <h2>Contact</h2>
+            <p>If you'd like to connect with me or discuss potential collaboration opportunities, feel free to <a href="mailto:helendessa@gmail.com">reach out</a>.</p>
+          </section>
+        </main>
+        <footer>
+          <p>&copy; 2025 Helen. All rights reserved.</p>
+        </footer>
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (event) => {
-          loadContent(event, link.href);
-        });
-      });
-    });
-  </script>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/js/info-page.js"></script>
 </body>
 </html>
