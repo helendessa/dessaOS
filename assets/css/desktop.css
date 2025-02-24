@@ -10,7 +10,6 @@ html, body {
 
 body {
     background-image: var(--desktop-wallpaper);
-    /*background-color: var(--background-color);*/
     display: flex;
     flex-direction: column;
     color: var(--text-color);
@@ -58,35 +57,18 @@ body {
     gap: 10px;
 }
 
-.menu-button {
-    background: none;
-    border: none;
-    color: var(--taskbar-text-color);
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.menu-button img {
-    vertical-align: middle;
-}
-
-.menu-button:hover {
-    transform: scale(1.1);
-}
-
+/* menu */
 .menu {
     display: none;
     position: absolute;
     bottom: 50px;
     left: 10px;
-    width: 250px;
+    width: 300px;
     background: var(--menu-background);
     border: 1px solid var(--menu-border-color);
     border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(10px);
     opacity: 0;
@@ -98,10 +80,39 @@ body {
     opacity: 1;
 }
 
+.menu-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: var(--menu-header-background);
+    color: var(--menu-header-text-color);
+    border-bottom: 1px solid var(--menu-border-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.menu-header img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.menu-left, .menu-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .menu button {
     width: 100%;
-    margin-bottom: 8px;
     padding: 8px 10px;
+    display: flex;
     align-items: center;
     gap: 10px;
     text-align: left;
@@ -112,6 +123,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu button img {
+    width: 20px;
+    height: 20px;
 }
 
 .menu button:hover {
@@ -203,8 +219,51 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    resize: both;
+    /*resize: both;*/
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    /*background: rgba(0, 0, 0, 0.2);*/
+    color: transparent;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.top-left {
+    top: 5px;
+    left: 5px;
+    cursor: nwse-resize;
+    z-index: 1;
+    color: transparent;
+
+}
+
+.top-right {
+    top: 5px;
+    right: 5px;
+    cursor: nesw-resize;
+    z-index: 1;
+    color: transparent;
+}
+
+.bottom-left {
+    bottom: 5px;
+    left: 5px;
+    cursor: nesw-resize;
+    z-index: 1;
+    color: transparent;
+}
+
+.bottom-right {
+    bottom: 5px;
+    right: 5px;
+    cursor: nwse-resize;
+    z-index: 1;
+    color: transparent;
 }
 
 .window.maximized {
@@ -214,6 +273,7 @@ body {
     height: calc(100% - 40px) !important;
     top: 0 !important;
     left: 0 !important;
+    z-index: 900;
 }
 
 .window-header {
@@ -267,6 +327,24 @@ body {
     padding: 20px;
     overflow-y: auto;
     flex: 1;
+    max-height: calc(100vh - 100px);
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+.window-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.window-content::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+    border-radius: 10px;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 10px;
+    border: 3px solid var(--scrollbar-track);
 }
 
 .content-section {

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>About LingoOS</title>
+  <link rel="stylesheet" href="../assets/css/info.css">
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body class="light-theme">
+  <header>
+    <h1>About LingoOS</h1>
+    <nav>
+      <a href="desktop.html" onclick="loadContent(event, 'desktop.html')">Home</a>
+      <a href="info.html" onclick="loadContent(event, 'info.html')">About</a>
+    </nav>
+  </header>
+  <main id="content">
+    <section>
+      <h2>Our Mission</h2>
+      <p>At LingoOS, our mission is to make language learning accessible, engaging, and effective for everyone. We believe that learning a new language should be a fun and rewarding experience.</p>
+    </section>
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
+        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
+        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
+        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
+        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
+        <li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li><li><strong>Interactive Grammar Lessons:</strong> Master the rules of grammar with engaging and interactive lessons.</li>
+        <li><strong>Books & Texts:</strong> Read and analyze larger texts to improve your comprehension skills.</li>
+        <li><strong>Everyday Conversations:</strong> Practice common conversations to become fluent in everyday situations.</li>
+        <li><strong>Specific Vocabulary:</strong> Learn vocabulary for specific topics and scenarios with targeted exercises.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>How It Works</h2>
+      <p>LingoOS provides a virtual desktop environment where you can access various language learning tools and resources. Simply log in, explore the features, and start your language learning journey.</p>
+    </section>
+    <section>
+      <h2>Contact Us</h2>
+      <p>If you have any questions or feedback, feel free to <a href="mailto:support@lingoos.com">contact us</a>.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 LingoOS. All rights reserved.</p>
+  </footer>
+  <button id="theme-toggle">
+    <img id="theme-icon" src="../assets/images/dark-theme-icon.svg" alt="Toggle Theme" width="24" height="24">
+  </button>
+  <script src="../assets/js/theme.js"></script>
+  <script>
+    function loadContent(event, url) {
+      event.preventDefault();
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data, 'text/html');
+          const newContent = doc.querySelector('#content').innerHTML;
+          document.getElementById('content').innerHTML = newContent;
+        })
+        .catch(error => console.error('Error loading content:', error));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (event) => {
+          loadContent(event, link.href);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

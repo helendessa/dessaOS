@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="assets/css/desktop.css" rel="stylesheet">
+    <link href="../assets/css/desktop.css" rel="stylesheet">
     <title>LingoOS</title>
-    <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="../assets/images/favicon.ico" rel="icon" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
@@ -14,59 +14,85 @@
         <header class="taskbar">
             <div class="taskbar-left">
               <button class="menu-button" onclick="toggleMenu()">
-                <img src="assets/images/menu-icon.svg" alt="Menu" width="20" height="20">
+                <img src="../assets/images/menu-icon.svg" alt="Menu" width="20" height="20">
               </button>
               <nav id="menu" class="menu">
-                <button onclick="openWindow('Grammar', 'assets/images/grammar-icon.svg')">
-                  <img src="assets/images/grammar-icon.svg" alt="Grammar Icon" width="20" height="20">
-                  Grammar
-                </button>
-                <button onclick="openWindow('Vocab', 'assets/images/vocab-icon.svg')">
-                  <img src="assets/images/vocab-icon.svg" alt="Vocab Icon" width="20" height="20">
-                  Vocab
-                </button>
-                <button onclick="openWindow('Books', 'assets/images/books-icon.svg')">
-                  <img src="assets/images/books-icon.svg" alt="Books Icon" width="20" height="20">
-                  Books
-                </button>
-                <button onclick="openWindow('LingoOS', 'assets/images/info-icon.svg')">
-                    <img src="assets/images/info-icon.svg" alt="Info Icon" width="20" height="20">
-                    LingoOS
-                </button>
+                <div class="menu-header">
+                  <img src="../assets/images/menu-icon.svg" alt="Menu Icon">
+                  <span>Start Menu</span>
+                </div>
+                <div class="menu-content">
+                  <div class="menu-left">
+                    <button onclick="openWindow('Grammar', '../assets/images/grammar-icon.svg', 'grammar.html')">
+                      <img src="../assets/images/grammar-icon.svg" alt="Grammar Icon">
+                      Grammar
+                    </button>
+                    <button onclick="openWindow('Vocab', '../assets/images/vocab-icon.svg', 'vocab.html')">
+                      <img src="../assets/images/vocab-icon.svg" alt="Vocab Icon">
+                      Vocab
+                    </button>
+                    <button onclick="openWindow('Books', '../assets/images/books-icon.svg', 'books.html')">
+                      <img src="../assets/images/books-icon.svg" alt="Books Icon">
+                      Books
+                    </button>
+                    <button onclick="openWindow('LingoOS', '../assets/images/info-icon.svg', 'info.html')">
+                        <img src="../assets/images/info-icon.svg" alt="Info Icon">
+                        LingoOS
+                    </button>
+                  </div>
+                  <div class="menu-right">
+                    <button onclick="openWindow('Profile', '../assets/images/profile-icon.svg', 'profile.html')">
+                        <img src="../assets/images/profile-icon.svg" alt="Profile Icon">
+                        Profile
+                    </button>
+                    <button onclick="openWindow('Settings', '../assets/images/settings-icon.svg', 'settings.html')">
+                        <img src="../assets/images/settings-icon.svg" alt="Settings Icon">
+                        Settings
+                    </button>
+                    <div class="divider"></div>
+                    <button onclick="logout()">
+                        <img src="../assets/images/power-off-icon.svg" alt="Logout Icon">
+                        Logout
+                    </button>
+                    <button onclick="restartPage()">
+                        <img src="../assets/images/restart-icon.svg" alt="Restart Icon">
+                        Restart
+                    </button>
+                  </div>
+                </div>
               </nav>
               <div id="open-programs" class="open-programs"></div>
             </div>
             <div class="taskbar-right">
                 <button id="theme-toggle" class="theme-button">
-                    <img id="theme-icon" src="assets/images/dark-theme-icon.svg" alt="Toggle Theme" width="24" height="24">
+                    <img id="theme-icon" src="../assets/images/dark-theme-icon.svg" alt="Toggle Theme" width="24" height="24">
                 </button>
                 <span id="clock"></span>
             </div>
         </header>
 
-
         <div class="icon-grid">
-            <div class="icon-container" onclick="openWindow('Grammar', 'assets/images/grammar-icon.svg')">
+            <div class="icon-container" onclick="openWindow('Grammar', '../assets/images/grammar-icon.svg', 'grammar.html')">
               <div class="icon">
-                <img src="assets/images/grammar-icon.svg" alt="Grammar Icon" width="40" height="40">
+                <img src="../assets/images/grammar-icon.svg" alt="Grammar Icon" width="40" height="40">
               </div>
               <p>Grammar</p>
             </div>
-            <div class="icon-container" onclick="openWindow('Vocab', 'assets/images/vocab-icon.svg')">
+            <div class="icon-container" onclick="openWindow('Vocab', '../assets/images/vocab-icon.svg', 'vocab.html')">
               <div class="icon">
-                <img src="assets/images/vocab-icon.svg" alt="Vocab Icon" width="40" height="40">
+                <img src="../assets/images/vocab-icon.svg" alt="Vocab Icon" width="40" height="40">
               </div>
               <p>Vocab</p>
             </div>
-            <div class="icon-container" onclick="openWindow('Books', 'assets/images/books-icon.svg')">
+            <div class="icon-container" onclick="openWindow('Books', '../assets/images/books-icon.svg', 'books.html')">
               <div class="icon">
-                <img src="assets/images/books-icon.svg" alt="Books Icon" width="40" height="40">
+                <img src="../assets/images/books-icon.svg" alt="Books Icon" width="40" height="40">
               </div>
               <p>Books</p>
             </div>
-            <div class="icon-container" onclick="openWindow('LingoOS', 'assets/images/info-icon.svg')">
+            <div class="icon-container" onclick="openWindow('LingoOS', '../assets/images/info-icon.svg', 'info.html')">
               <div class="icon">
-                <img src="assets/images/info-icon.svg" alt="Info Icon" width="40" height="40">
+                <img src="../assets/images/info-icon.svg" alt="Info Icon" width="40" height="40">
               </div>
               <p>LingoOS</p>
             </div>
@@ -117,7 +143,7 @@
             </div>
         </main>
     </div>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/theme.js"></script>
 </body>
 </html>

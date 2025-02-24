@@ -27,6 +27,8 @@
     --window-header-background: #8A56AC;
     --window-header-text-color: #FFFFFF;
     --desktop-wallpaper: url('../images/light-galaxy-wallpaper.png');
+    --scrollbar-track: #f0f0f0;
+    --scrollbar-thumb: #c0c0c0;
 }
 
 /* dark theme */
@@ -51,7 +53,6 @@
     --menu-border-color: #555;
     --menu-button-background: #4B0082;
     --menu-button-hover-background: #3C3C3C;
-    
     --icon-background: rgba(138, 86, 172, 0.8);
     --icon-text-color: #fff;
     --window-background: #2C2C2C;
@@ -59,4 +60,6 @@
     --window-header-background: #4B0082;
     --window-header-text-color: #FFFFFF;
     --desktop-wallpaper: url('../images/dark-galaxy-wallpaper.png');
+    --scrollbar-track: #2c2c2c;
+    --scrollbar-thumb: #555555;
 }
