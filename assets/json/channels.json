@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Pop Punk TV ",
+      "description": " : All your favorite Pop Punk hits",
+      "songs": [
+        { "title": "All the Small Things", "artist": "Blink-182", "videoId": "9Ht5RZpzPqw" },
+        { "title": "Sugar, We're Goin Down", "artist": "Fall Out Boy", "videoId": "_5wJQIyCXxg" },
+        { "title": "The Anthem", "artist": "Good Charlotte", "videoId": "desJKYvdq9A" },
+        { "title": "Fat Lip", "artist": "Sum 41", "videoId": "CMX2lPum_pg" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Emo BR ",
+      "description": " : Os maiores sucessos do Emo Brasileiro",
+      "songs": [
+        { "title": "Dias de Luta, Dias de Glória", "artist": "Charlie Brown Jr.", "videoId": "pDzzvTBKQco" },
+        { "title": "Carta aos Desinteressados", "artist": "Fresno", "videoId": "7QOF9l3PtYU" },
+        { "title": "Quebra-Mar", "artist": "Fresno", "videoId": "D3mgB7UozeM" },
+        { "title": "Só Rezo", "artist": "NX Zero", "videoId": "YpQ8oQUNNIg" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Emo International ",
+      "description": " : International Emo classics",
+      "songs": [
+        { "title": "I Write Sins Not Tragedies", "artist": "Panic! At The Disco", "videoId": "vc6vs-l5dkc" },
+        { "title": "Welcome to the Black Parade", "artist": "My Chemical Romance", "videoId": "RRKJiM9Njr8" },
+        { "title": "Misery Business", "artist": "Paramore", "videoId": "aCyGvGEtOwc" },
+        { "title": "Dance, Dance", "artist": "Fall Out Boy", "videoId": "C6MOKXm8x50" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Grunge Channel ",
+      "description": " : Classic Grunge from the 90s",
+      "songs": [
+        { "title": "Smells Like Teen Spirit", "artist": "Nirvana", "videoId": "hTWKbfoikeg" },
+        { "title": "Alive", "artist": "Pearl Jam", "videoId": "qM0zINtulhM" },
+        { "title": "Even Flow", "artist": "Pearl Jam", "videoId": "CxKWTzr-k6s" },
+        { "title": "Heart-Shaped Box", "artist": "Nirvana", "videoId": "n6P0SitRwy8" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sad Songs TV ",
+      "description": " : Melancholy tunes for when you're feeling blue",
+      "songs": [
+        { "title": "Adam's Song", "artist": "Blink-182", "videoId": "2MRdtXWcgIw" },
+        { "title": "Therapy", "artist": "All Time Low", "videoId": "vy9jLJKG6Mk" },
+        { "title": "Black", "artist": "Pearl Jam", "videoId": "IpwHB2U3J1s" },
+        { "title": "Nutshell", "artist": "Alice In Chains", "videoId": "_siJRgDlddY" }
+      ]
+    }
+  ]

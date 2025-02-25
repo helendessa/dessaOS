@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/css/info-page.css">
+    <link rel="stylesheet" href="../assets/css/tv.css">
+</head>
+<body>
+    <div class="tv-container">        
+        <div class="tv-display">
+            <div class="tv-set">
+                <div class="remote-control">
+                    <div class="remote-header">
+                        <button class="remote-power" onclick="togglePower()" title="Power"></button>
+                    </div>
+                    <!-- numeric -->
+                    <div class="remote-section">
+                        <button class="remote-button" onclick="changeChannel(0)" title="Channel 1">1</button>
+                        <button class="remote-button" onclick="changeChannel(1)" title="Channel 2">2</button>
+                        <button class="remote-button" onclick="changeChannel(2)" title="Channel 3">3</button>
+                        <button class="remote-button" onclick="changeChannel(3)" title="Channel 4">4</button>
+                        <button class="remote-button" onclick="changeChannel(4)" title="Channel 5">5</button>
+                    </div>
+                    
+                    <div class="remote-controls-grid">
+                        <!-- channel -->
+                        <div class="remote-control-column">
+                            <span class="remote-label">CH</span>
+                            <button class="remote-button" onclick="nextChannel()" title="Channel Up">+</button>
+                            <button class="remote-button" onclick="prevChannel()" title="Channel Down">-</button>
+                        </div>
+                        
+                        <!-- volume -->
+                        <div class="remote-control-column">
+                            <span class="remote-label">VOL</span>
+                            <button class="remote-button" onclick="increaseVolume()" title="Volume Up">+</button>
+                            <button class="remote-button" onclick="decreaseVolume()" title="Volume Down">-</button>
+                        </div>
+                    </div>
+                    <!-- guide/info -->
+                    <div class="remote-function-buttons">
+                        <span class="remote-label">GUIDE</span>
+                        <button class="remote-button large" onclick="toggleGuide()" title="Guide">GUIDE</button>
+                        <span class="remote-label">INFO</span>
+                        <button class="remote-button large" onclick="showChannelInfo()" title="Info">INFO</button>
+                    </div>
+                    
+                    <div class="remote-spacer"></div>
+                    <div class="remote-brand">HELEN REMOTE</div>
+                </div>
+                <div class="tv-channel-display" id="channelDisplay">--</div>
+                <div class="tv-screen">
+                    <div class="tv-scanlines"></div>
+                    <div class="tv-static" id="tvStatic"></div>
+                    <div id="player"></div>
+                    <div class="tv-info-display" id="infoDisplay">
+                        <div id="nowPlayingTitle">Title</div>
+                        <div id="nowPlayingArtist">Artist</div>
+                    </div>
+                    <div class="channel-guide hidden" id="channelGuide">
+                        <h2>Channel Guide</h2>
+                        <div id="channelListContainer">
+                            <div class="loading">Loading channels...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tv-controls">
+                    <div class="tv-button" onclick="prevChannel()" title="Channel Down">◄</div>
+                    <div class="tv-dial" onclick="togglePlay()" title="Play/Pause"></div>
+                    <div class="tv-button" onclick="nextChannel()" title="Channel Up">►</div>
+                    <div class="tv-button power" onclick="togglePower()" title="Power On/Off"></div>
+                    <!--<div class="tv-extra-controls">
+                        <div class="tv-function-button" onclick="toggleGuide()" title="Toggle Guide">GUIDE</div>
+                        <div class="tv-function-button" onclick="showChannelInfo()" title="Show Info">INFO</div>
+                        <div class="tv-function-button" onclick="refreshChannels()" title="Refresh">MENU</div>
+                    </div> -->
+                </div>
+                <div class="tv-brand">Helen TV</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/tv.js"></script>
+</body>
+</html>

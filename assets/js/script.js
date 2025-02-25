@@ -41,16 +41,38 @@ function openWindow(title, iconPath = 'icon.png', contentPath = '') {
     `;
     document.body.appendChild(windowElement);
 
+    windowElement.style.width = '85%';
+    windowElement.style.height = '85vh';
+    windowElement.style.left = '7%';
+    windowElement.style.top = '5%';
+    
     // load content from the specified path
     if (contentPath) {
-        fetch(contentPath)
-            .then(response => response.text())
-            .then(data => {
-                windowElement.querySelector('.window-content').innerHTML = data;
-            })
-            .catch(error => {
-                windowElement.querySelector('.window-content').innerHTML = `<p>Error loading content: ${error}</p>`;
-            });
+        // use iframe for html content to preserve scripts
+        if (contentPath.endsWith('.html')) {
+            const iframe = document.createElement('iframe');
+            iframe.src = contentPath;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.style.overflow = 'auto';
+            
+            // replace the loading message with the iframe
+            const contentContainer = windowElement.querySelector('.window-content');
+            contentContainer.innerHTML = '';
+            contentContainer.appendChild(iframe);
+        } else {
+            // fetch for non-html content
+            fetch(contentPath)
+                .then(response => response.text())
+                .then(data => {
+                    windowElement.querySelector('.window-content').innerHTML = data;
+                })
+                .catch(error => {
+                    windowElement.querySelector('.window-content').innerHTML = 
+                        `<p>Error loading content: ${error}</p>`;
+                });
+        }
     } else {
         windowElement.querySelector('.window-content').innerHTML = `<p>Content for ${title}</p>`;
     }
@@ -63,21 +85,22 @@ function openWindow(title, iconPath = 'icon.png', contentPath = '') {
 
     // toggle on click
     programIcon.onclick = () => {
-        if (windowElement.style.display === 'block') {
-            windowElement.style.display = 'none'; // minimize
+        if (windowElement.style.display === 'none') {
+            windowElement.style.display = 'block'; // show
         } else {
-            windowElement.style.display = 'block'; // maximize
+            windowElement.style.display = 'none'; // hide
         }
     };
 
     // add the icon to the toolbar
     openPrograms.appendChild(programIcon);
 
-    // make the window draggable
     makeWindowDraggable(windowElement);
-    // make the window resizable
     makeWindowResizable(windowElement);
+
+    return windowElement;
 }
+
 
 // close the window and remove its icon from the toolbar
 function closeWindow(button) {
@@ -234,4 +257,8 @@ function makeWindowResizable(windowElement) {
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('mouseup', onMouseUp);
     }
+}
+
+function openMusicWindow() {
+    openWindow('TV', '../assets/images/tv-icon.ico', 'music.html');
 }
