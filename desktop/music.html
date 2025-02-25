@@ -13,6 +13,7 @@
                     <div class="remote-header">
                         <button class="remote-power" onclick="togglePower()" title="Power"></button>
                     </div>
+                    
                     <!-- numeric -->
                     <div class="remote-section">
                         <button class="remote-button" onclick="changeChannel(0)" title="Channel 1">1</button>
@@ -21,7 +22,6 @@
                         <button class="remote-button" onclick="changeChannel(3)" title="Channel 4">4</button>
                         <button class="remote-button" onclick="changeChannel(4)" title="Channel 5">5</button>
                     </div>
-                    
                     <div class="remote-controls-grid">
                         <!-- channel -->
                         <div class="remote-control-column">
@@ -37,13 +37,23 @@
                             <button class="remote-button" onclick="decreaseVolume()" title="Volume Down">-</button>
                         </div>
                     </div>
+
+                    <!-- video controls -->
+                    <div class="remote-video-buttons">
+                        <button class="remote-button" onclick="previousVideo()" title="Previous Video">◀◀</button>
+                        <button class="remote-button" onclick="togglePlay()" title="Play/Pause">⏯</button>
+                        <button class="remote-button" onclick="stopVideo()" title="Stop">⏹</button>
+                        <button class="remote-button" onclick="nextVideo()" title="Next Video">▶▶</button>
+                    </div>
+
                     <!-- guide/info -->
                     <div class="remote-function-buttons">
                         <span class="remote-label">GUIDE</span>
-                        <button class="remote-button large" onclick="toggleGuide()" title="Guide">GUIDE</button>
+                        <button class="remote-button large" onclick="toggleGuide()" title="Guide"></button>
                         <span class="remote-label">INFO</span>
-                        <button class="remote-button large" onclick="showChannelInfo()" title="Info">INFO</button>
+                        <button class="remote-button large" onclick="showChannelInfo()" title="Info"></button>
                     </div>
+
                     
                     <div class="remote-spacer"></div>
                     <div class="remote-brand">HELEN REMOTE</div>
@@ -63,18 +73,9 @@
                             <div class="loading">Loading channels...</div>
                         </div>
                     </div>
+                    <div id="tvShutdownEffect" class="tv-shutdown-effect"></div>
                 </div>
-                <div class="tv-controls">
-                    <div class="tv-button" onclick="prevChannel()" title="Channel Down">◄</div>
-                    <div class="tv-dial" onclick="togglePlay()" title="Play/Pause"></div>
-                    <div class="tv-button" onclick="nextChannel()" title="Channel Up">►</div>
-                    <div class="tv-button power" onclick="togglePower()" title="Power On/Off"></div>
-                    <!--<div class="tv-extra-controls">
-                        <div class="tv-function-button" onclick="toggleGuide()" title="Toggle Guide">GUIDE</div>
-                        <div class="tv-function-button" onclick="showChannelInfo()" title="Show Info">INFO</div>
-                        <div class="tv-function-button" onclick="refreshChannels()" title="Refresh">MENU</div>
-                    </div> -->
-                </div>
+
                 <div class="tv-brand">Helen TV</div>
             </div>
         </div>

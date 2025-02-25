@@ -1,57 +1,498 @@
 [
-    {
-      "id": 1,
-      "name": "Pop Punk TV ",
-      "description": " : All your favorite Pop Punk hits",
-      "songs": [
-        { "title": "All the Small Things", "artist": "Blink-182", "videoId": "9Ht5RZpzPqw" },
-        { "title": "Sugar, We're Goin Down", "artist": "Fall Out Boy", "videoId": "_5wJQIyCXxg" },
-        { "title": "The Anthem", "artist": "Good Charlotte", "videoId": "desJKYvdq9A" },
-        { "title": "Fat Lip", "artist": "Sum 41", "videoId": "CMX2lPum_pg" }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Emo BR ",
-      "description": " : Os maiores sucessos do Emo Brasileiro",
-      "songs": [
-        { "title": "Dias de Luta, Dias de Glória", "artist": "Charlie Brown Jr.", "videoId": "pDzzvTBKQco" },
-        { "title": "Carta aos Desinteressados", "artist": "Fresno", "videoId": "7QOF9l3PtYU" },
-        { "title": "Quebra-Mar", "artist": "Fresno", "videoId": "D3mgB7UozeM" },
-        { "title": "Só Rezo", "artist": "NX Zero", "videoId": "YpQ8oQUNNIg" }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Emo International ",
-      "description": " : International Emo classics",
-      "songs": [
-        { "title": "I Write Sins Not Tragedies", "artist": "Panic! At The Disco", "videoId": "vc6vs-l5dkc" },
-        { "title": "Welcome to the Black Parade", "artist": "My Chemical Romance", "videoId": "RRKJiM9Njr8" },
-        { "title": "Misery Business", "artist": "Paramore", "videoId": "aCyGvGEtOwc" },
-        { "title": "Dance, Dance", "artist": "Fall Out Boy", "videoId": "C6MOKXm8x50" }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Grunge Channel ",
-      "description": " : Classic Grunge from the 90s",
-      "songs": [
-        { "title": "Smells Like Teen Spirit", "artist": "Nirvana", "videoId": "hTWKbfoikeg" },
-        { "title": "Alive", "artist": "Pearl Jam", "videoId": "qM0zINtulhM" },
-        { "title": "Even Flow", "artist": "Pearl Jam", "videoId": "CxKWTzr-k6s" },
-        { "title": "Heart-Shaped Box", "artist": "Nirvana", "videoId": "n6P0SitRwy8" }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "Sad Songs TV ",
-      "description": " : Melancholy tunes for when you're feeling blue",
-      "songs": [
-        { "title": "Adam's Song", "artist": "Blink-182", "videoId": "2MRdtXWcgIw" },
-        { "title": "Therapy", "artist": "All Time Low", "videoId": "vy9jLJKG6Mk" },
-        { "title": "Black", "artist": "Pearl Jam", "videoId": "IpwHB2U3J1s" },
-        { "title": "Nutshell", "artist": "Alice In Chains", "videoId": "_siJRgDlddY" }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Rock Mix",
+    "description": " : A mix of Metalcore, Emocore, Hardcore, Pop Punk, Grunge, and Punk hits",
+    "songs": [
+      {
+        "title": "Chelsea Smile",
+        "artist": "Bring Me The Horizon",
+        "videoId": "tcoPW53yO3E"
+      },
+      {
+        "title": "Antivist",
+        "artist": "Bring Me The Horizon",
+        "videoId": "P8ld6sQtWK8"
+      },
+      {
+        "title": "Can You Feel My Heart",
+        "artist": "Bring Me The Horizon",
+        "videoId": "6AVRCQBc59w"
+      },
+      {
+        "title": "Happy Song",
+        "artist": "Bring Me The Horizon",
+        "videoId": "58LeVo7j46w"
+      },
+      {
+        "title": "Teardrops",
+        "artist": "Bring Me The Horizon",
+        "videoId": "L5uV3gmOH9g"
+      },
+      {
+        "title": "Top 10 staTues tHat CriEd bloOd",
+        "artist": "Bring Me The Horizon",
+        "videoId": "LxxlN_FhLac"
+      },
+      {
+        "title": "Alive",
+        "artist": "Pearl Jam",
+        "videoId": "qM0zINtulhM"
+      },
+      {
+        "title": "Even Flow",
+        "artist": "Pearl Jam",
+        "videoId": "CxKWTzr-k6s"
+      },
+      {
+        "title": "Come As You Are",
+        "artist": "Nirvana",
+        "videoId": "vabnZ9-ex7o"
+      },
+      {
+        "title": "Something In The Way - Live MTV",
+        "artist": "Nirvana",
+        "videoId": "1YhR5UfaAzM"
+      },
+      {
+        "title": "Man in the Box",
+        "artist": "Alice In Chains",
+        "videoId": "TAqZb52sgpU"
+      },
+      {
+        "title": "Down In A Hole",
+        "artist": "Alice In Chains",
+        "videoId": "f8hT3oDDf6c"
+      },
+      {
+        "title": "Mr. Liberty (With Morals)",
+        "artist": "Malfunkshun",
+        "videoId": "r2M5GAI0i2Q"
+      },
+      {
+        "title": "Crazy Love",
+        "artist": "Gruntruck",
+        "videoId": "MK73Y-W8JJg"
+      },
+      {
+        "title": "Black Hole Sun",
+        "artist": "Soundgarden",
+        "videoId": "3mbBbFH9fAg"
+      },
+      {
+        "title": "Fell On Black Days",
+        "artist": "Soundgarden",
+        "videoId": "ySzrJ4GRF7s"
+      },
+      {
+        "title": "I Don't Know Anything",
+        "artist": "Mad Season",
+        "videoId": "nKcnnXRCK44"
+      },
+      {
+        "title": "All Apologies",
+        "artist": "Nirvana",
+        "videoId": "aWmkuH1k7uA"
+      },
+      {
+        "title": "River of Deceit",
+        "artist": "Mad Season",
+        "videoId": "Fm72DPJCX58"
+      },
+      {
+        "title": "Swallow My Pride",
+        "artist": "Green River",
+        "videoId": "QQ0e3043X6Q"
+      },
+      {
+        "title": "Broken",
+        "artist": "Gruntruck",
+        "videoId": "HOmQSGqkU_Q"
+      },
+      {
+        "title": "Suck You Dry",
+        "artist": "Mudhoney",
+        "videoId": "yun1IlBnDmY"
+      },
+      {
+        "title": "Tomorrow",
+        "artist": "Silverchair",
+        "videoId": "PjsMnvqL7eY"
+      },
+      {
+        "title": "Again",
+        "artist": "Alice In Chains",
+        "videoId": "__biilMpnmw"
+      },
+      {
+        "title": "Crawling",
+        "artist": "Linkin Park",
+        "videoId": "Gd9OhYroLN0"
+      },
+      {
+        "title": "Stonehenge",
+        "artist": "Fresno",
+        "videoId": "oV_xy7OHfyM"
+      },
+      {
+        "title": "Duas Lágrimas",
+        "artist": "Fresno",
+        "videoId": "IRI72sRk6h8"
+      },
+      {
+        "title": "Cada Poça Dessa Rua Tem um Pouco de Minhas Lágrimas",
+        "artist": "Fresno",
+        "videoId": "NjADq36UDh4"
+      },
+      {
+        "title": "Desde Quando Você Se Foi",
+        "artist": "Fresno",
+        "videoId": "E5PQGrRufe8"
+      },
+      {
+        "title": "Alguém Que Te Faz Sorrir",
+        "artist": "Fresno",
+        "videoId": "WkE5yNP-6xQ"
+      },
+      {
+        "title": "Milonga",
+        "artist": "Fresno",
+        "videoId": "M3AooQFt7X0"
+      },
+      {
+        "title": "Eu Sei",
+        "artist": "Fresno",
+        "videoId": "jo8lQVtBTFk"
+      },
+      {
+        "title": "Porto Alegre",
+        "artist": "Fresno",
+        "videoId": "Rl6bWN_OR3g"
+      },
+      {
+        "title": "A Gente Morre Sozinho",
+        "artist": "Fresno",
+        "videoId": "JjlzAVs5QQw"
+      },
+      {
+        "title": "Infinito",
+        "artist": "Fresno",
+        "videoId": "UXLfnchfP8U"
+      },
+      {
+        "title": "Diga, parte 2",
+        "artist": "Fresno",
+        "videoId": "f1pBfpWCzF8"
+      },
+      {
+        "title": "Eu Sou a Maré Viva",
+        "artist": "Fresno",
+        "videoId": "JB4zP0nVJ3E"
+      },
+      {
+        "title": "O Ar",
+        "artist": "Fresno",
+        "videoId": "2o_F6dkxyKI"
+      },
+      {
+        "title": "Sua Alegria Foi Cancelada",
+        "artist": "Fresno",
+        "videoId": "rPkWHYY9CzQ"
+      },
+      {
+        "title": "We'll Fight Together",
+        "artist": "Fresno",
+        "videoId": "9vrE2yhDGSo"
+      },
+      {
+        "title": "Casa Assombrada",
+        "artist": "Fresno",
+        "videoId": "sVF98wpZvbE"
+      },
+      {
+        "title": "Broken By You (feat. Fresno)",
+        "artist": "McFly",
+        "videoId": "3NmxHLxznbs"
+      },
+      {
+        "title": "Teu Semblante",
+        "artist": "Fresno",
+        "videoId": "xPfwgxQ8J24"
+      },
+      {
+        "title": "Eu Te Amo / Eu Te Odeio (IÔ-IÔ)",
+        "artist": "Fresno",
+        "videoId": "HPqYdgIK35Q"
+      },
+      {
+        "title": "Camadas",
+        "artist": "Fresno",
+        "videoId": "WII8KJ8JFk0"
+      },
+      {
+        "title": "Horizontes (feat. Lucas Silveira)",
+        "artist": "Gloria",
+        "videoId": "Z_y8d_5jZFM"
+      },
+      {
+        "title": "Obrigado Tempestade",
+        "artist": "Hateen",
+        "videoId": "cIAkLVXoLAQ"
+      },
+      {
+        "title": "Cedo Ou Tarde",
+        "artist": "NX Zero",
+        "videoId": "XdglM81b4g8"
+      },
+      {
+        "title": "Pela Última Vez",
+        "artist": "NX Zero",
+        "videoId": "4gZZ4I_nGKE"
+      },
+      {
+        "title": "Silêncio",
+        "artist": "NX Zero",
+        "videoId": "x0OUfIM7r0Y"
+      },
+      {
+        "title": "Passos Escuros",
+        "artist": "Hevo 84",
+        "videoId": "UuecTXbbHzA"
+      },
+      {
+        "title": "Aquela Música",
+        "artist": "Fake Number",
+        "videoId": "m0WDm4tUcxM"
+      },
+      {
+        "title": "Um Minuto Para O Fim Do Mundo",
+        "artist": "CPM 22",
+        "videoId": "RsEeyZNiwUk"
+      },
+      {
+        "title": "Tarde De Outubro",
+        "artist": "CPM 22",
+        "videoId": "omxcUfz6ynE"
+      },
+      {
+        "title": "Revanche",
+        "artist": "Fresno",
+        "videoId": "3Em_5YNgc54"
+      },
+      {
+        "title": "Waiting Room",
+        "artist": "Fugazi",
+        "videoId": "Og7u3sKuegM"
+      },
+      {
+        "title": "Chop Suey!",
+        "artist": "System Of A Down",
+        "videoId": "CSvFpBOe8eY"
+      },
+      {
+        "title": "Feel the Pain",
+        "artist": "Dinosaur Jr.",
+        "videoId": "JXkN3nJyWEA"
+      },
+      {
+        "title": "Institutionalized",
+        "artist": "Suicidal Tendencies",
+        "videoId": "LoF_a0-7xVQ"
+      },
+      {
+        "title": "Sometimes I Feel Like",
+        "artist": "Bad Religion",
+        "videoId": "LItUYXPPZX0"
+      },
+      {
+        "title": "Black Me Out",
+        "artist": "Against Me!",
+        "videoId": "iWB_b480-9c"
+      },
+      {
+        "title": "War Inside My Head",
+        "artist": "Suicidal Tendencies",
+        "videoId": "Lv2o1U93t2s"
+      },
+      {
+        "title": "Patience",
+        "artist": "Rites of Spring",
+        "videoId": "vOq2w5H6s0Q"
+      },
+      {
+        "title": "Pay to Cum",
+        "artist": "Bad Brains",
+        "videoId": "9ThoDPP44Hw"
+      },
+      {
+        "title": "Bastards of Young",
+        "artist": "The Replacements",
+        "videoId": "fl9KQ1Mub6Q"
+      },
+      {
+        "title": "Give Me Back",
+        "artist": "Embrace",
+        "videoId": "KfEPlCX2UCo"
+      },
+      {
+        "title": "Fix Me",
+        "artist": "Black Flag",
+        "videoId": "Nsf3hfe46gw"
+      },
+      {
+        "title": "Don't Bother Me",
+        "artist": "Bad Brains",
+        "videoId": "qUXVWo3WnJ0"
+      },
+      {
+        "title": "My Better Half",
+        "artist": "One Last Wish",
+        "videoId": "_jy88c7tybQ"
+      },
+      {
+        "title": "Phobias",
+        "artist": "Gray Matter",
+        "videoId": "BwTwvVnxgDo"
+      },
+      {
+        "title": "Fill A Void",
+        "artist": "Gray Matter",
+        "videoId": "NcVJQ83rupY"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Telecurso 2000 ",
+    "description": " : Automação",
+    "songs": [
+      {
+        "title": "01 - Introdução",
+        "artist": "Telecurso 2000",
+        "videoId": "Cnh1VyvbpJU"
+      },
+      {
+        "title": "02 - Ciclo de Um Produto",
+        "artist": "Telecurso 2000",
+        "videoId": "Dp48gaVStYU"
+      },
+      {
+        "title": "03 - Eletricidade e Automação ",
+        "artist": "Telecurso 2000",
+        "videoId": "xBejvE60iRw"
+      },
+      {
+        "title": "04 - Eletricidade Acionamento de Motores Elétricos",
+        "artist": "Telecurso 2000",
+        "videoId": "7gsHvqw4BFg"
+      },
+      {
+        "title": "05 - Atuadores e Válvulas",
+        "artist": "Telecurso 2000",
+        "videoId": "UHKVzdhBR-I"
+      },
+      {
+        "title": "06 - Circuitos Pneumáticos e Hidráulicos",
+        "artist": "Telecurso 2000",
+        "videoId": "OFTsMuypH-Y"
+      },
+      {
+        "title": "07 - Sensoriamento",
+        "artist": "Telecurso 2000",
+        "videoId": "JpMxO7v9gyw"
+      },
+      {
+        "title": "08 - Eletrônica Conceitos Básicos",
+        "artist": "Telecurso 2000",
+        "videoId": "FF6RMAkmhbo"
+      },
+      {
+        "title": "09 - Eletrônica Circuitos Especiais",
+        "artist": "Telecurso 2000",
+        "videoId": "0YC3VtwVgFM"
+      },
+      {
+        "title": "10 - Microcomputadores",
+        "artist": "Telecurso 2000",
+        "videoId": "4KQQt22EMdk"
+      },
+      {
+        "title": "11 - Evolução dos Microcomputadores",
+        "artist": "Telecurso 2000",
+        "videoId": "I_eroYTi-GM"
+      },
+      {
+        "title": "12 - Controladores Lógicos Programáveis (CLPs)",
+        "artist": "Telecurso 2000",
+        "videoId": "KnX_ZwythHA"
+      },
+      {
+        "title": "13 - Software",
+        "artist": "Telecurso 2000",
+        "videoId": "h1OWWPHjCxY"
+      },
+      {
+        "title": "14 - CAD Conceitos Básicos",
+        "artist": "Telecurso 2000",
+        "videoId": "Z3xCwBfOxyk"
+      },
+      {
+        "title": "15 - Computador, Projeto e Manufatura",
+        "artist": "Telecurso 2000",
+        "videoId": "bR1FlzR2qVM"
+      },
+      {
+        "title": "16 - Máquinas CNC",
+        "artist": "Telecurso 2000",
+        "videoId": "uBSf7BWduqU"
+      },
+      {
+        "title": "17 - Robôs Industriais",
+        "artist": "Telecurso 2000",
+        "videoId": "KN9R-7kiNKI"
+      },
+      {
+        "title": "18 - Sistemas Flexíveis de Manufatura",
+        "artist": "Telecurso 2000",
+        "videoId": "7FpunfgphcU"
+      },
+      {
+        "title": "19 - Tecnologia do Futuro",
+        "artist": "Telecurso 2000",
+        "videoId": "sB7tboxotAw"
+      },
+      {
+        "title": "20 - Engenharia Simultânea Universo da Mecânica",
+        "artist": "Telecurso 2000",
+        "videoId": "RghhsmCKOAQ"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Emo International",
+    "description": " : International Emo classics",
+    "songs": [
+      {
+        "title": "I Write Sins Not Tragedies",
+        "artist": "Panic! At The Disco",
+        "videoId": "vc6vs-l5dkc"
+      },
+      {
+        "title": "Welcome to the Black Parade",
+        "artist": "My Chemical Romance",
+        "videoId": "RRKJiM9Njr8"
+      },
+      {
+        "title": "Misery Business",
+        "artist": "Paramore",
+        "videoId": "aCyGvGEtOwc"
+      },
+      {
+        "title": "Dance, Dance",
+        "artist": "Fall Out Boy",
+        "videoId": "C6MOKXm8x50"
+      }
+    ]
+  }
+]

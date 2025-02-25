@@ -5,6 +5,7 @@ let currentSong = 0;
 let isPowerOn = true;
 let infoTimeout;
 let isInitialized = false;
+let currentSongIndexes = []; // track current song index per channel
 
 function toggleGuide() {
     const guide = document.getElementById('channelGuide');
@@ -99,19 +100,41 @@ function togglePower() {
     isPowerOn = !isPowerOn;
     const staticElement = document.getElementById('tvStatic');
     const channelDisplay = document.getElementById('channelDisplay');
+    const playerElement = document.getElementById('player');
+    const shutdownEffect = document.getElementById('tvShutdownEffect');
     
     if (isPowerOn) {
-        staticElement.style.opacity = '0.1';
-        channelDisplay.style.opacity = '1';
-        if (player && player.playVideo) {
-            player.playVideo();
-        }
+        // Turn ON
+        shutdownEffect.style.opacity = '0';
+        setTimeout(() => {
+            if (playerElement) playerElement.classList.remove('tv-off-animation');
+            staticElement.style.opacity = '0.1';
+            channelDisplay.style.opacity = '1';
+            
+            if (player && player.playVideo) {
+                player.playVideo();
+            }
+        }, 100);
     } else {
-        staticElement.style.opacity = '0.8';
+        // Turn OFF with old TV effect
+        staticElement.style.opacity = '0';
         channelDisplay.style.opacity = '0.3';
+        
         if (player && player.pauseVideo) {
             player.pauseVideo();
         }
+        
+        // Apply shutdown animation
+        if (playerElement) playerElement.classList.add('tv-off-animation');
+        
+        // Show complete black after animation
+        setTimeout(() => {
+            shutdownEffect.style.opacity = '1';  // Make screen completely black
+            if (playerElement) {
+                playerElement.classList.remove('tv-off-animation');
+                playerElement.style.opacity = '0';
+            }
+        }, 500);
     }
 }
 
@@ -146,29 +169,37 @@ function nextSong() {
     if (!isPowerOn || channels.length === 0) return;
     
     const channel = channels[currentChannel];
-    currentSong = (currentSong + 1) % channel.songs.length;
-    playSong(currentSong);
+    if (!currentSongIndexes[currentChannel]) {
+        currentSongIndexes[currentChannel] = 0;
+    }
+    
+    currentSongIndexes[currentChannel] = (currentSongIndexes[currentChannel] + 1) % channel.songs.length;
+    playSong(currentSongIndexes[currentChannel]);
 }
 
 function changeChannel(channelIndex) {
     if (!isPowerOn || channels.length === 0) return;
     
     currentChannel = channelIndex;
-    currentSong = 0; // start with the first song on the channel
     
-    // update channel display
+    // Initialize currentSongIndexes if not set
+    if (!currentSongIndexes[currentChannel]) {
+        currentSongIndexes[currentChannel] = 0;
+    }
+    
+    // Update channel display
     document.getElementById('channelDisplay').innerText = channels[channelIndex].id;
     
-    // show static effect when changing channels
+    // Show static effect when changing channels
     const staticElement = document.getElementById('tvStatic');
     staticElement.style.opacity = '0.8';
     
-    // update active channel in guide
+    // Update active channel in guide
     updateChannelGuide();
     
-    // delay to simulate channel changing
+    // Delay to simulate channel changing
     setTimeout(() => {
-        playSong(currentSong);
+        playSong(currentSongIndexes[currentChannel]);
         staticElement.style.opacity = '0.1';
         showInfoBriefly();
     }, 800);
@@ -179,17 +210,19 @@ function playSong(songIndex) {
     
     const channel = channels[currentChannel];
     const song = channel.songs[songIndex];
+    currentSongIndexes[currentChannel] = songIndex;
     
     if (song && song.videoId && player && player.loadVideoById) {
         player.loadVideoById(song.videoId);
         
-        // update info display
+        // Update info display
         document.getElementById('nowPlayingTitle').innerText = song.title;
         document.getElementById('nowPlayingArtist').innerText = song.artist;
         
         showInfoBriefly();
     }
 }
+
 
 function showInfoBriefly() {
     const infoDisplay = document.getElementById('infoDisplay');
@@ -249,6 +282,31 @@ function refreshChannels() {
         '<div class="loading">Refreshing channels...</div>';
     
     initApp();
+}
+
+function previousVideo() {
+    if (!isPowerOn || channels.length === 0) return;
+    
+    const channel = channels[currentChannel];
+    if (!currentSongIndexes[currentChannel]) {
+        currentSongIndexes[currentChannel] = 0;
+    }
+    
+    currentSongIndexes[currentChannel] = (currentSongIndexes[currentChannel] - 1 + channel.songs.length) % channel.songs.length;
+    playSong(currentSongIndexes[currentChannel]);
+}
+
+function nextVideo() {
+    nextSong(); // Reuse existing function
+}
+
+function stopVideo() {
+    if (!isPowerOn || !player) return;
+    
+    player.seekTo(0);
+    player.pauseVideo();
+    const playPauseButton = document.getElementById('playPauseButton');
+    if (playPauseButton) playPauseButton.textContent = "⏯";
 }
 
 // initialize the application when page loads

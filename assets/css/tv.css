@@ -252,6 +252,38 @@ body {
     background-color: #555;
 }
 
+.tv-shutdown-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+    transition: opacity 0.2s ease-in-out;
+}
+
+@keyframes tvOff {
+    0% { 
+        transform: scaleY(1); 
+        opacity: 1;
+    }
+    60% { 
+        transform: scaleY(0.05);
+        opacity: 1;
+    }
+    100% { 
+        transform: scaleY(0.01);
+        opacity: 0;
+    }
+}
+
+.tv-off-animation {
+    animation: tvOff 0.5s forwards;
+}
+
 /* tv guide */
 .channel-guide {
     position: absolute;
@@ -358,7 +390,6 @@ body {
     text-align: center;
 }
 
-
 .loading {
     display: flex;
     justify-content: center;
@@ -375,6 +406,40 @@ body {
 }
 
 /* remote control */
+.volume-control {
+    width: 100px;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+    position: relative;
+    margin: 10px 0;
+}
+
+.volume-control::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #ffb90f;
+    border-radius: 5px;
+    transform: translateY(-50%);
+}
+
+.volume-control-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffb90f;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 .remote-control {
     width: 150px;
     height: 450px;
@@ -385,7 +450,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     position: absolute;
     right: -170px;
     top: 50%;
@@ -401,7 +466,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 4px;
     margin-bottom: 16px;
     padding: 0 5px;
 }
@@ -414,6 +479,7 @@ body {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 5px;
+    gap: 4px;
 }
 
 .remote-control-column {
@@ -428,12 +494,11 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 5px;
+    gap: 4px;
     margin-top: 10px;
-    padding-top: 15px;
+    padding-top: 10px;
     border-top: 1px solid #ccc;
 }
-
 
 .remote-label {
     width: 100%;
@@ -519,4 +584,16 @@ body {
     letter-spacing: 1px;
     border-top: 1px solid #ccc;
     margin-top: auto;
+}
+
+.remote-video-section {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.remote-video-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
 }
