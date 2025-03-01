@@ -4,7 +4,7 @@ body {
     overflow: hidden;
     font-family: 'Tahoma', sans-serif;
     font-size: 11px;
-    background-color: #1a1a1a;
+    background-color: #1e1e1e; /* Dark background */
     color: #e0e0e0;
 }
 
@@ -12,15 +12,15 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #242424;
-    border: 1px solid #444444;
+    background: #2a2a2a; /* Dark gray background */
+    border: 1px solid #444;
     position: relative;
 }
 
-/* menu bar */
+/* Menu bar */
 .menu-bar {
-    background: #2a2a2a;
-    border-bottom: 1px solid #555555;
+    background: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
+    border-bottom: 1px solid #555;
     padding: 2px 0;
     z-index: 100;
 }
@@ -35,17 +35,18 @@ body {
 .menu-bar li {
     padding: 3px 8px;
     cursor: pointer;
+    color: #e0e0e0;
 }
 
 .menu-bar li:hover {
-    background-color: #316AC5;
+    background-color: #0078d7;
     color: white;
 }
 
-/* toolbar - left */
+/* Toolbar - left */
 .paint-toolbar {
-    background: #242424;
-    border-right: 1px solid #555555;
+    background: #2a2a2a;
+    border-right: 1px solid #444;
     padding: 4px;
     display: flex;
     flex-direction: column;
@@ -53,17 +54,18 @@ body {
     left: 0;
     top: 25px;
     width: 40px;
-    bottom: 70px;
+    bottom: 90px; /* Increased to add more space from bottom */
     overflow-y: auto;
 }
 
 .tool-group {
-    border: 1px solid #555555;
+    border: 1px solid #444;
     margin: 5px 0;
     padding: 2px;
-    background: #2a2a2a;
+    background: #333; 
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .tool-button {
@@ -71,8 +73,8 @@ body {
     height: 28px;
     padding: 2px;
     margin: 2px auto;
-    background: #2a2a2a;
-    border: 1px solid transparent;
+    background: #2d2d2d;
+    border: 1px solid #2d2d2d;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -80,39 +82,40 @@ body {
 }
 
 .tool-button:hover {
-    border: 1px solid #316AC5;
-    background: #3a3a3a;
+    border: 1px solid #555;
+    background: #3d3d3d;
 }
 
 .tool-button.active {
-    border: 1px solid #555555;
-    background: #316AC5;
+    border: 1px solid #0078d7;
+    background: #1e5999; /* Blue highlight for active */
 }
 
 .tool-button img {
     width: 16px;
     height: 16px;
-    filter: invert(1);
+    filter: invert(1); /* Invert icons to be visible on dark background */
 }
 
-/* canvas and palette */
+/* Canvas and palette */
 .canvas-and-palette {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 25px - 18px); /* total height - menubar - statusbar */
+    height: calc(100vh - 25px - 18px);
     margin-left: 42px;
+    margin-bottom: 20px; /* Add space at the bottom */
 }
 
-/* color palette */
+/* Color palette */
 .color-selection {
-    background: #242424;
-    border-top: 1px solid #555555;
+    background: #2a2a2a;
+    border-top: 1px solid #444;
     padding: 5px;
     display: flex;
     align-items: left;
     justify-content: left;
     position: absolute;
-    bottom: 18px;
+    bottom: 38px; /* Increased to add more space from bottom status bar */
     left: 0;
     right: 0;
     height: 50px;
@@ -123,15 +126,18 @@ body {
     height: 40px;
     position: relative;
     margin-right: 10px;
+    border: 1px solid #444;
+    background: #333;
+    padding: 2px;
 }
 
 .primary-color {
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #000;
+    top: 2px;
+    left: 2px;
+    border: 1px solid #666;
     background: #000;
     z-index: 2;
 }
@@ -140,28 +146,29 @@ body {
     width: 25px;
     height: 25px;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    border: 1px solid #000;
+    bottom: 2px;
+    right: 2px;
+    border: 1px solid #666;
     background: #FFF;
     z-index: 1;
 }
 
 .color-grid {
-    border: 1px solid #555555;
+    border: 1px solid #444;
     padding: 2px;
-    background: #2a2a2a;
+    background: #333;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .color-swatch {
     width: 15px;
     height: 15px;
-    border: 1px solid #555555;
+    border: 1px solid #555;
     cursor: pointer;
 }
 
 .color-swatch:hover {
-    border: 1px solid #fff;
+    border: 1px solid #0078d7;
 }
 
 .hidden-picker {
@@ -170,26 +177,27 @@ body {
 }
 
 .canvas-container {
-    background: #333333;
+    background: #444; /* Dark gray around canvas */
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: auto;
-    padding: 10px;
-    height: calc(100vh - 25px - 18px - 50px);
+    padding: 20px; /* Increased padding */
+    height: calc(100vh - 25px - 38px - 70px); /* Adjusted to add more bottom margin */
+    margin-bottom: 20px; /* Extra space at bottom */
 }
 
 #canvas {
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: white; /* Keep canvas white for drawing */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     cursor: crosshair;
-    margin: 10px;
+    margin: 20px; /* Increased margins around canvas */
 }
 
 .status-bar {
     background: #2a2a2a;
-    border-top: 1px solid #555555;
+    border-top: 1px solid #444;
     padding: 2px 5px;
     display: flex;
     justify-content: space-between;
@@ -199,15 +207,17 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
+    color: #e0e0e0;
 }
 
-/* dropdown top menu */
+/* Dropdown top menu */
 .dropdown-menu {
-    background: #2a2a2a;
-    border: 1px solid #555555;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background: #333;
+    border: 1px solid #555;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     min-width: 150px;
     z-index: 1000;
+    color: #e0e0e0;
 }
 
 .menu-item {
@@ -216,6 +226,6 @@ body {
 }
 
 .menu-item:hover {
-    background-color: #316AC5;
+    background-color: #0078d7;
     color: white;
 }

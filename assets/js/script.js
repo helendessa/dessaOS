@@ -13,6 +13,8 @@ function toggleMenu() {
 function openWindow(title, iconPath = 'icon.png', contentPath = '') {
     const windowElement = document.createElement('div');
     windowElement.classList.add('window');
+    windowElement.style.overflow = 'hidden'; // prevent scrolling in outer window
+    
     windowElement.innerHTML = `
         <div class="window-header">
             <div class="window-title">
@@ -46,35 +48,65 @@ function openWindow(title, iconPath = 'icon.png', contentPath = '') {
     windowElement.style.left = '7%';
     windowElement.style.top = '5%';
     
+    const contentContainer = windowElement.querySelector('.window-content');
+    contentContainer.style.height = 'calc(100% - 30px)';
+    contentContainer.style.position = 'relative';
+    contentContainer.style.padding = '0';
+    
     // load content from the specified path
     if (contentPath) {
         // use iframe for html content to preserve scripts
         if (contentPath.endsWith('.html')) {
-            const iframe = document.createElement('iframe');
-            iframe.src = contentPath;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = 'none';
-            iframe.style.overflow = 'auto';
+            // For iframes, keep the container non-scrollable
+            contentContainer.style.overflow = 'hidden';
             
-            // replace the loading message with the iframe
-            const contentContainer = windowElement.querySelector('.window-content');
-            contentContainer.innerHTML = '';
-            contentContainer.appendChild(iframe);
+            // fill the window with the content, except for tv
+            if (contentPath === 'tv.html' || title === 'TV') {
+                const iframe = document.createElement('iframe');
+                iframe.src = contentPath;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.style.overflow = 'auto';
+                
+                contentContainer.innerHTML = '';
+                contentContainer.appendChild(iframe);
+            } else {
+                const iframe = document.createElement('iframe');
+                iframe.src = contentPath;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.style.overflow = 'auto';
+                iframe.style.margin = '0';
+                iframe.style.padding = '0';
+                
+                contentContainer.innerHTML = '';
+                contentContainer.appendChild(iframe);
+                
+                contentContainer.style.margin = '0';
+                contentContainer.style.padding = '0';
+                contentContainer.style.border = 'none';
+            }
         } else {
+            contentContainer.style.overflow = 'auto';
+            contentContainer.style.margin = '0';
+            contentContainer.style.padding = '0';
+            
             // fetch for non-html content
             fetch(contentPath)
                 .then(response => response.text())
                 .then(data => {
-                    windowElement.querySelector('.window-content').innerHTML = data;
+                    contentContainer.innerHTML = data;
                 })
                 .catch(error => {
-                    windowElement.querySelector('.window-content').innerHTML = 
+                    contentContainer.innerHTML = 
                         `<p>Error loading content: ${error}</p>`;
                 });
         }
     } else {
-        windowElement.querySelector('.window-content').innerHTML = `<p>Content for ${title}</p>`;
+        contentContainer.style.overflow = 'auto';
+        contentContainer.innerHTML = `<p>Content for ${title}</p>`;
     }
 
     // create an icon in the toolbar
