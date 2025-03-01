@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint</title>
+    <link rel="stylesheet" href="../assets/css/paint.css">
+</head>
+<body>
+    <div class="xp-window">
+        <div class="menu-bar">
+            <ul>
+                <li>File</li>
+                <li>Edit</li>
+                <li>View</li>
+                <li>Image</li>
+                <li>Colors</li>
+                <li>Help</li>
+            </ul>
+        </div>
+        
+        <div class="paint-toolbar">
+            <div class="tool-group">
+                <button class="tool-button active" id="pencilButton" title="Pencil">
+                    <img src="../assets/images/pencil-icon.png" alt="Pencil">
+                </button>
+                <button class="tool-button" id="brushButton" title="Brush">
+                    <img src="../assets/images/brush-icon.png" alt="Brush">
+                </button>
+                <button class="tool-button" id="eraserButton" title="Eraser">
+                    <img src="../assets/images/eraser-icon.png" alt="Eraser">
+                </button>
+                <button class="tool-button" id="fillButton" title="Fill">
+                    <img src="../assets/images/fill-icon.png" alt="Fill">
+                </button>
+                <button class="tool-button" id="textButton" title="Text">
+                    <img src="../assets/images/text-icon.png" alt="Text">
+                </button>
+            </div>
+            
+            <div class="tool-group">
+                <button class="tool-button" id="rectangleButton" title="Rectangle">
+                    <img src="../assets/images/rectangle-icon.png" alt="Rectangle">
+                </button>
+                <button class="tool-button" id="circleButton" title="Circle">
+                    <img src="../assets/images/circle-icon.png" alt="Circle">
+                </button>
+                <button class="tool-button" id="lineButton" title="Line">
+                    <img src="../assets/images/line-icon.png" alt="Line">
+                </button>
+            </div>
+            
+            <div class="tool-group">
+                <button class="tool-button" id="undoButton" title="Undo">
+                    <img src="../assets/images/undo-icon.png" alt="Undo">
+                </button>
+                <button class="tool-button" id="redoButton" title="Redo">
+                    <img src="../assets/images/redo-icon.png" alt="Redo">
+                </button>
+            </div>
+        </div>
+        
+        <div class="canvas-and-palette">
+            <div class="color-selection">
+                <div class="active-colors">
+                    <div class="primary-color"></div>
+                    <div class="secondary-color"></div>
+                </div>
+                <div class="color-grid">
+                    <table>
+                        <tr>
+                            <td class="color-swatch" style="background: #000000"></td>
+                            <td class="color-swatch" style="background: #7f7f7f"></td>
+                            <td class="color-swatch" style="background: #880015"></td>
+                            <td class="color-swatch" style="background: #ed1c24"></td>
+                            <td class="color-swatch" style="background: #ff7f27"></td>
+                            <td class="color-swatch" style="background: #fff200"></td>
+                            <td class="color-swatch" style="background: #22b14c"></td>
+                            <td class="color-swatch" style="background: #00a2e8"></td>
+                        </tr>
+                        <tr>
+                            <td class="color-swatch" style="background: #ffffff"></td>
+                            <td class="color-swatch" style="background: #c3c3c3"></td>
+                            <td class="color-swatch" style="background: #a349a4"></td>
+                            <td class="color-swatch" style="background: #ff00ff"></td>
+                            <td class="color-swatch" style="background: #b5e61d"></td>
+                            <td class="color-swatch" style="background: #99d9ea"></td>
+                            <td class="color-swatch" style="background: #7092be"></td>
+                            <td class="color-swatch" style="background: #c8bfe7"></td>
+                        </tr>
+                    </table>
+                </div>
+                <input type="color" id="colorPicker" class="hidden-picker">
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="canvas" width="800" height="600"></canvas>
+            </div>
+        </div>
+        
+        <div class="status-bar">
+            <div class="coordinates">For Help, click Help Topics on the Help Menu.</div>
+            <div class="canvas-size">800,600px</div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/paint.js"></script>
+</body>
+</html>

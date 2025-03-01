@@ -1,151 +1,217 @@
-/* Light and Dark theme variables */
-:root {
-    --word-bg: #ffffff;
-    --word-text: #000000;
-    --word-toolbar-bg: #f0f0f0;
-    --word-toolbar-border: #ccc;
-    --word-button-hover: #e0e0e0;
-    --word-document-shadow: rgba(0, 0, 0, 0.1);
-  }
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Silkscreen:wght@400;700&display=swap');
+
+.dark-theme {
+  /* Document colors - using darker base */
+  --word-bg: #0f0f0f;          /* Darkest document background */
+  --word-text: #ffffff;         /* Pure white text */
+  --word-document-shadow: rgba(0, 0, 0, 0.95);
   
-  .dark-theme {
-    --word-bg: #2d2d2d;
-    --word-text: #ffffff;
-    --word-toolbar-bg: #1e1e1e;
-    --word-toolbar-border: #444444;
-    --word-button-hover: #3d3d3d;
-    --word-document-shadow: rgba(0, 0, 0, 0.3);
-  }
+  /* Toolbar colors - distinct medium grays */
+  --word-toolbar-bg: #242424;   /* Medium dark toolbar */
+  --word-toolbar-border: #4a4a4a; /* Lighter border */
+  --word-button-hover: #666666;  /* Light hover state */
+  --word-icon-invert: 100%;
   
-  body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--word-bg);
-    min-height: 100vh;
-  }
+  /* Header and footer colors - darker than toolbar */
+  --header-bg: #1a1a1a;         /* Dark header/footer */
+  --header-text: #ffffff;
+  --footer-bg: #1a1a1a;
+  --footer-text: #ffffff;
   
-  .word-document {
-    background-color: var(--word-bg);
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    color: var(--word-text);
-  }
-  
-  .word-toolbar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: var(--word-toolbar-bg);
-    padding: 10px;
-    border-bottom: 1px solid var(--word-toolbar-border);
-    width: 100%;
-    gap: 20px;
-  }
-  
-  .toolbar-section {
-    display: flex;
-    gap: 5px;
-    padding: 0 10px;
-    border-right: 1px solid var(--word-toolbar-border);
-  }
-  
-  .toolbar-section:last-child {
-    border-right: none;
-  }
-  
-  .toolbar-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    border: 1px solid transparent;
-    background: none;
-    cursor: pointer;
-    border-radius: 3px;
-  }
-  
-  .toolbar-button:hover {
-    border-color: var(--word-toolbar-border);
-    background-color: var(--word-button-hover);
-  }
-  
-  .toolbar-button img {
-    width: 16px;
-    height: 16px;
-    filter: invert(var(--word-icon-invert));
-  }
-  
-  .font-settings {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .font-select, 
-  .font-size-select {
-    padding: 2px;
-    border: 1px solid var(--word-toolbar-border);
-    border-radius: 2px;
-    font-size: 12px;
-    background-color: var(--word-bg);
-    color: var(--word-text);
-  }
-  
-  .document {
-    width: 8.5in;
-    margin: 0 auto;
-    padding: 60px 1in 1in;
-    background-color: var(--word-bg);
-    box-shadow: 0 0 10px var(--word-document-shadow);
-  }
-  
-  #content {
-    width: 100%;
-  }
-  
-  h1 {
-    font-size: 24pt;
-    text-align: center;
-    margin-bottom: 0.5in;
-    color: var(--word-text);
-  }
-  
-  h2 {
-    font-size: 18pt;
-    margin-top: 1in;
-    color: var(--word-text);
-  }
-  
-  h3 {
-    font-size: 14pt;
-    margin-top: 0.5in;
-    color: var(--word-text);
-  }
-  
-  p, 
-  ul {
-    font-size: 12pt;
-    line-height: 1.5;
-    color: var(--word-text);
-  }
-  
-  ul {
-    padding-left: 1.5em;
-  }
-  
-  footer {
-    text-align: center;
-    font-size: 10pt;
-    margin-top: 1in;
-    color: var(--word-text);
-  }
-  
-  a {
-    color: #0066cc;
-  }
-  
-  .dark-theme a {
-    color: #66b3ff;
-  }
+  /* Window colors - lightest background */
+  --window-bg: #333333;         /* Light window background */
+}
+
+/* Window Content Styles */
+.window-content {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--window-bg);
+  color: var(--word-text);
+  min-height: 100vh;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Document Styles */
+.word-document {
+  background-color: var(--word-bg);
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  color: var(--word-text);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.95);
+  border: 1px solid #404040;
+}
+
+/* Toolbar Styles */
+.word-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--word-toolbar-bg);
+  padding: 12px;
+  border-bottom: 2px solid var(--word-toolbar-border);
+  width: 100%;
+  gap: 20px;
+}
+
+.toolbar-section {
+  display: flex;
+  gap: 8px;
+  padding: 0 15px;
+  border-right: 2px solid var(--word-toolbar-border);
+}
+
+.toolbar-section:last-child {
+  border-right: none;
+}
+
+/* Button Styles */
+.toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.toolbar-button:hover {
+  border-color: #777777;
+  background-color: var(--word-button-hover);
+}
+
+.toolbar-button img {
+  width: 16px;
+  height: 16px;
+  filter: invert(var(--word-icon-invert));
+}
+
+/* Font Controls */
+.font-settings {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.font-select,
+.font-size-select {
+  padding: 4px 8px;
+  border: 2px solid var(--word-toolbar-border);
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: #fff;
+  color: var(--word-text);
+  transition: border-color 0.2s ease;
+}
+
+.font-select:hover,
+.font-size-select:hover {
+  border-color: #777777;
+  background-color: #404040;
+}
+
+/* Main Document Area */
+.document {
+  width: 8.5in;
+  margin: 30px auto;
+  padding: 60px 1in 1in;
+  background-color: var(--word-bg);
+  box-shadow: 0 0 25px var(--word-document-shadow);
+  color: var(--word-text);
+  border: 1px solid #555555;
+}
+
+#content {
+  width: 100%;
+}
+
+/* Typography - Dark WordArt Style */
+h1, h2, h3 {
+  color: #bdbbbb;
+  margin-bottom: 1em;
+  text-shadow: 4px 4px 6px rgba(33, 165, 66, 0.8),
+               0 0 10px rgb(47, 210, 231);
+  background-clip: text;
+  font-family: 'Rubik Glitch', sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  transform: perspective(800px) rotateX(15deg);
+  text-transform: uppercase;
+}
+
+h1 { 
+  font-size: 32pt; 
+  border-bottom: 2px solid #333333;
+}
+
+h2 { 
+  font-size: 24pt;
+}
+
+h3 { 
+  font-size: 18pt;
+}
+
+p, ul {
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #f0f0f0;
+  margin-bottom: 1em;
+  font-family: 'Silkscreen', sans-serif; 
+}
+
+ul {
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 10pt;
+  margin-top: 1in;
+  padding: 20px;
+  color: var(--word-text);
+  border-top: 1px solid var(--word-toolbar-border);
+  background-color: var(--footer-bg);
+}
+
+/* Links */
+a {
+  color: #66b3ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #99ccff;
+  text-decoration: underline;
+}
+
+/* Dark Theme Specific Overrides */
+.dark-theme .word-document {
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.95);
+}
+
+.dark-theme .toolbar-button:hover {
+  background-color: var(--word-button-hover);
+  border-color: #777777;
+}
+
+.dark-theme .font-select,
+.dark-theme .font-size-select {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+.rubik-glitch-regular {
+  font-family: "Rubik Glitch", serif;
+  font-weight: 400;
+  font-style: normal;
+}

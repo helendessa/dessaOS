@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 11px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.xp-window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #242424;
+    border: 1px solid #444444;
+    position: relative;
+}
+
+/* menu bar */
+.menu-bar {
+    background: #2a2a2a;
+    border-bottom: 1px solid #555555;
+    padding: 2px 0;
+    z-index: 100;
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-bar li {
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.menu-bar li:hover {
+    background-color: #316AC5;
+    color: white;
+}
+
+/* toolbar - left */
+.paint-toolbar {
+    background: #242424;
+    border-right: 1px solid #555555;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 40px;
+    bottom: 70px;
+    overflow-y: auto;
+}
+
+.tool-group {
+    border: 1px solid #555555;
+    margin: 5px 0;
+    padding: 2px;
+    background: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-button {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+    margin: 2px auto;
+    background: #2a2a2a;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-button:hover {
+    border: 1px solid #316AC5;
+    background: #3a3a3a;
+}
+
+.tool-button.active {
+    border: 1px solid #555555;
+    background: #316AC5;
+}
+
+.tool-button img {
+    width: 16px;
+    height: 16px;
+    filter: invert(1);
+}
+
+/* canvas and palette */
+.canvas-and-palette {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 25px - 18px); /* total height - menubar - statusbar */
+    margin-left: 42px;
+}
+
+/* color palette */
+.color-selection {
+    background: #242424;
+    border-top: 1px solid #555555;
+    padding: 5px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+
+.active-colors {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.primary-color {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000;
+    background: #000;
+    z-index: 2;
+}
+
+.secondary-color {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 1px solid #000;
+    background: #FFF;
+    z-index: 1;
+}
+
+.color-grid {
+    border: 1px solid #555555;
+    padding: 2px;
+    background: #2a2a2a;
+}
+
+.color-swatch {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #555555;
+    cursor: pointer;
+}
+
+.color-swatch:hover {
+    border: 1px solid #fff;
+}
+
+.hidden-picker {
+    position: absolute;
+    visibility: hidden;
+}
+
+.canvas-container {
+    background: #333333;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 10px;
+    height: calc(100vh - 25px - 18px - 50px);
+}
+
+#canvas {
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: crosshair;
+    margin: 10px;
+}
+
+.status-bar {
+    background: #2a2a2a;
+    border-top: 1px solid #555555;
+    padding: 2px 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    height: 18px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* dropdown top menu */
+.dropdown-menu {
+    background: #2a2a2a;
+    border: 1px solid #555555;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.menu-item {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #316AC5;
+    color: white;
+}

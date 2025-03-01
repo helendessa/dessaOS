@@ -260,5 +260,5 @@ function makeWindowResizable(windowElement) {
 }
 
 function openMusicWindow() {
-    openWindow('TV', '../assets/images/tv-icon.ico', 'music.html');
+    openWindow('TV', '../assets/images/tv-icon.ico', 'tv.html');
 }
