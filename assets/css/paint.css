@@ -4,7 +4,7 @@ body {
     overflow: hidden;
     font-family: 'Tahoma', sans-serif;
     font-size: 11px;
-    background-color: #1e1e1e; /* Dark background */
+    background-color: #1e1e1e;
     color: #e0e0e0;
 }
 
@@ -12,12 +12,12 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #2a2a2a; /* Dark gray background */
+    background: #2a2a2a;
     border: 1px solid #444;
     position: relative;
 }
 
-/* Menu bar */
+/* menu bar */
 .menu-bar {
     background: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
     border-bottom: 1px solid #555;
@@ -43,7 +43,7 @@ body {
     color: white;
 }
 
-/* Toolbar - left */
+/* toolbar - left */
 .paint-toolbar {
     background: #2a2a2a;
     border-right: 1px solid #444;
@@ -54,7 +54,7 @@ body {
     left: 0;
     top: 25px;
     width: 40px;
-    bottom: 90px; /* Increased to add more space from bottom */
+    bottom: 25px;
     overflow-y: auto;
 }
 
@@ -88,25 +88,25 @@ body {
 
 .tool-button.active {
     border: 1px solid #0078d7;
-    background: #1e5999; /* Blue highlight for active */
+    background: #1e5999;
 }
 
 .tool-button img {
     width: 16px;
     height: 16px;
-    filter: invert(1); /* Invert icons to be visible on dark background */
+    filter: invert(1); /* invert the color */
 }
 
-/* Canvas and palette */
+/* canvas and palette */
 .canvas-and-palette {
     display: flex;
     flex-direction: column;
     height: calc(100vh - 25px - 18px);
     margin-left: 42px;
-    margin-bottom: 20px; /* Add space at the bottom */
+    margin-bottom: 20px; 
 }
 
-/* Color palette */
+/* color palette */
 .color-selection {
     background: #2a2a2a;
     border-top: 1px solid #444;
@@ -115,7 +115,7 @@ body {
     align-items: left;
     justify-content: left;
     position: absolute;
-    bottom: 38px; /* Increased to add more space from bottom status bar */
+    bottom: 38px;
     left: 0;
     right: 0;
     height: 50px;
@@ -177,22 +177,36 @@ body {
 }
 
 .canvas-container {
-    background: #444; /* Dark gray around canvas */
+    background: #444;
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: auto;
-    padding: 20px; /* Increased padding */
-    height: calc(100vh - 25px - 38px - 70px); /* Adjusted to add more bottom margin */
-    margin-bottom: 20px; /* Extra space at bottom */
+    padding: 20px;
+    height: calc(100vh - 25px - 38px - 90px);
+    margin-bottom: 40px;
 }
 
 #canvas {
-    background: white; /* Keep canvas white for drawing */
+    background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     cursor: crosshair;
-    margin: 20px; /* Increased margins around canvas */
+    margin: 20px 20px 40px 20px;
+}
+
+.color-selection {
+    background: #2a2a2a;
+    border-top: 1px solid #444;
+    padding: 5px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: absolute;
+    bottom: 38px;
+    left: 0;
+    right: 0;
+    height: 50px;
 }
 
 .status-bar {
@@ -210,7 +224,7 @@ body {
     color: #e0e0e0;
 }
 
-/* Dropdown top menu */
+/* dropdown top menu */
 .dropdown-menu {
     background: #333;
     border: 1px solid #555;
