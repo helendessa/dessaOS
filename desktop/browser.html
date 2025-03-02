@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internet Explorer</title>
+    <link rel="stylesheet" href="../assets/css/browser.css">
+</head>
+<body>
+    <div class="browser-window">
+        <div class="browser-toolbar">
+            <div class="nav-buttons">
+                <button class="nav-button" title="Back">
+                    <img src="../assets/images/back-icon.png" alt="Back">
+                </button>
+                <button class="nav-button" title="Forward">
+                    <img src="../assets/images/forward-icon.png" alt="Forward">
+                </button>
+                <button class="nav-button" title="Refresh">
+                    <img src="../assets/images/refresh-icon.png" alt="Refresh">
+                </button>
+                <button class="nav-button" title="Stop">
+                    <img src="../assets/images/stop-icon.png" alt="Stop">
+                </button>
+                <button class="nav-button" title="Home">
+                    <img src="../assets/images/home-icon.png" alt="Home">
+                </button>
+            </div>
+            
+            <div class="address-bar">
+                <img src="../assets/images/page-icon.png" alt="Page">
+                <input type="text" class="address-input" value="https://www.google.com">
+                <button class="go-button">Go</button>
+            </div>
+        </div>
+        
+        <div class="favorites-bar">
+            <a href="#"><img src="../assets/images/msn-icon.png" alt="MSN">MSN</a>
+            <a href="#"><img src="../assets/images/hotmail-icon.png" alt="Hotmail">Hotmail</a>
+            <a href="#"><img src="../assets/images/search-icon.png" alt="Search">Search</a>
+        </div>
+        
+        <div id="browser-content" class="browser-content">
+            <div class="search-container">
+                <img src="../assets/images/google-logo.png" alt="Google" class="google-logo">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search Google or type a URL">
+                <div class="search-buttons">
+                    <button class="search-button" onclick="navigate()">Google Search</button>
+                    <button class="search-button" onclick="navigate()">I'm Feeling Lucky</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status-bar">Done</div>
+    </div>
+    
+    <script src="../assets/js/browser.js"></script>
+</body>
+</html>
