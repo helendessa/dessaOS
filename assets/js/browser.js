@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span style="color: #9cdcfe;">About Google</span>
                     </div>
                     <div style="margin-top: 10px;">
-                        ©2003 Google - Searching 3,083,324,652 web pages
+                        ©2000 Google - Searching 3,083,324,652 web pages
                     </div>
                 </div>
             </div>

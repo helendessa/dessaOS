@@ -2,281 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recycle Bin</title>
+    <link rel="stylesheet" href="../assets/css/recycle-bin.css">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             overflow: hidden;
-            font-family: 'Tahoma', sans-serif;
-            background-color: white;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
         }
         
-        .explorer-window {
+        .recycle-bin-container {
             display: flex;
             flex-direction: column;
             height: 100%;
         }
-        
-        .toolbar {
-            background: #ECE9D8;
-            border-bottom: 1px solid #ACA899;
-            padding: 2px 8px;
-            display: flex;
-            align-items: center;
-            height: 36px;
-        }
-        
-        .toolbar-button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 8px;
-            padding: 0 6px;
-            font-size: 10px;
-            color: #000;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-        
-        .toolbar-button:hover {
-            border: 1px solid #ACA899;
-            background: #F1EFE2;
-        }
-        
-        .toolbar-button img {
-            width: 20px;
-            height: 20px;
-            margin-bottom: 1px;
-        }
-        
-        .toolbar-separator {
-            width: 1px;
-            height: 32px;
-            background: #ACA899;
-            margin: 0 5px;
-        }
-        
-        .address-bar {
-            background: #ECE9D8;
-            border-bottom: 1px solid #ACA899;
-            padding: 3px 8px;
-            display: flex;
-            align-items: center;
-            height: 22px;
-        }
-        
-        .address-label {
-            font-size: 11px;
-            margin-right: 5px;
-        }
-        
-        .address-field {
-            display: flex;
-            align-items: center;
-            background: white;
-            border: 1px solid #7F9DB9;
-            flex-grow: 1;
-            padding: 2px 5px;
-            font-size: 11px;
-        }
-        
-        .address-field img {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
-        }
-        
-        .explorer-content {
-            display: flex;
-            flex-grow: 1;
-        }
-        
-        .sidebar {
-            width: 180px;
-            background: #ECE9D8;
-            padding: 10px 5px;
-            border-right: 1px solid #ACA899;
-        }
-        
-        .sidebar-title {
-            font-weight: bold;
-            color: #003399;
-            padding: 2px 5px;
-            margin-bottom: 5px;
-        }
-        
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            padding: 3px 5px;
-            font-size: 11px;
-            cursor: pointer;
-        }
-        
-        .sidebar-item:hover {
-            background: #316AC5;
-            color: white;
-        }
-        
-        .sidebar-item img {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
-        }
-        
-        .file-list {
-            flex-grow: 1;
-            padding: 5px;
-            background: white;
-            overflow: auto;
-        }
-        
-        .file-item {
-            display: flex;
-            padding: 4px;
-            font-size: 11px;
-            border-bottom: 1px solid #F0F0F0;
-        }
-        
-        .file-item:hover {
-            background: #E8F1FC;
-        }
-        
-        .file-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
-        }
-        
-        .file-name {
-            width: 200px;
-        }
-        
-        .file-date {
-            flex-grow: 1;
-        }
-        
-        .file-size {
-            width: 80px;
-            text-align: right;
-        }
-        
-        .file-list-header {
-            display: flex;
-            padding: 4px;
-            font-size: 11px;
-            background: #ECE9D8;
-            font-weight: bold;
-            border-bottom: 1px solid #ACA899;
-        }
-        
-        .status-bar {
-            height: 20px;
-            background: #ECE9D8;
-            border-top: 1px solid #ACA899;
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            font-size: 11px;
-        }
     </style>
 </head>
 <body>
-    <div class="explorer-window">
+    <div class="recycle-bin-container">
+        <!-- menu bar -->
+        <div class="menu-bar">
+            <div class="menu-item">File</div>
+            <div class="menu-item">Edit</div>
+            <div class="menu-item">View</div>
+            <div class="menu-item">Favorites</div>
+            <div class="menu-item">Tools</div>
+            <div class="menu-item">Help</div>
+        </div>
+        
+        <!-- toolbar -->
         <div class="toolbar">
-            <div class="toolbar-button" title="Empty Recycle Bin">
-                <img src="../assets/images/empty-recycle-bin.png" alt="Empty">
-                <span>Empty the<br>Recycle Bin</span>
-            </div>
-            
-            <div class="toolbar-separator"></div>
-            
-            <div class="toolbar-button" title="Restore">
+            <button class="toolbar-button" title="Restore">
                 <img src="../assets/images/restore-icon.png" alt="Restore">
                 <span>Restore</span>
-            </div>
-            
-            <div class="toolbar-button" title="Delete">
+            </button>
+            <div class="toolbar-separator"></div>
+            <button class="toolbar-button" title="Empty Recycle Bin">
+                <img src="../assets/images/empty-icon.png" alt="Empty">
+                <span>Empty Recycle Bin</span>
+            </button>
+            <div class="toolbar-separator"></div>
+            <button class="toolbar-button" title="Delete">
                 <img src="../assets/images/delete-icon.png" alt="Delete">
                 <span>Delete</span>
-            </div>
+            </button>
         </div>
         
-        <div class="address-bar">
-            <span class="address-label">Address:</span>
-            <div class="address-field">
-                <img src="../assets/images/recycle-bin-icon.png" alt="Recycle Bin">
-                <span>Recycle Bin</span>
-            </div>
-        </div>
-        
-        <div class="explorer-content">
+        <!-- content area -->
+        <div class="content-area">
+            <!-- sidebar -->
             <div class="sidebar">
-                <div class="sidebar-title">Recycle Bin Tasks</div>
+                <div class="sidebar-header">Recycle Bin Tasks</div>
                 <div class="sidebar-item">
                     <img src="../assets/images/restore-icon.png" alt="Restore">
-                    <span>Restore all items</span>
+                    Restore selected items
                 </div>
                 <div class="sidebar-item">
-                    <img src="../assets/images/empty-recycle-bin.png" alt="Empty">
-                    <span>Empty Recycle Bin</span>
+                    <img src="../assets/images/empty-icon.png" alt="Empty">
+                    Empty the Recycle Bin
                 </div>
-                
-                <div class="sidebar-title" style="margin-top:20px">Other Places</div>
+                <div class="sidebar-header">Other Places</div>
                 <div class="sidebar-item">
                     <img src="../assets/images/desktop-icon.png" alt="Desktop">
-                    <span>Desktop</span>
+                    Desktop
                 </div>
                 <div class="sidebar-item">
                     <img src="../assets/images/documents-icon.png" alt="Documents">
-                    <span>My Documents</span>
+                    My Documents
                 </div>
                 <div class="sidebar-item">
                     <img src="../assets/images/computer-icon.png" alt="Computer">
-                    <span>My Computer</span>
+                    My Computer
                 </div>
             </div>
             
-            <div class="file-list">
-                <div class="file-list-header">
-                    <div class="file-name">Name</div>
-                    <div class="file-date">Date Deleted</div>
-                    <div class="file-size">Size</div>
-                </div>
-                
-                <div class="file-item">
-                    <img class="file-icon" src="../assets/images/text-file-icon.png" alt="File">
-                    <div class="file-name">Important Document.txt</div>
-                    <div class="file-date">Today, 11:42 AM</div>
-                    <div class="file-size">4 KB</div>
-                </div>
-                
-                <div class="file-item">
-                    <img class="file-icon" src="../assets/images/image-file-icon.png" alt="Image">
-                    <div class="file-name">Profile Picture.jpg</div>
-                    <div class="file-date">Yesterday, 3:15 PM</div>
-                    <div class="file-size">256 KB</div>
-                </div>
-                
-                <div class="file-item">
-                    <img class="file-icon" src="../assets/images/doc-file-icon.png" alt="Document">
-                    <div class="file-name">Resume.doc</div>
-                    <div class="file-date">3/1/2025, 9:30 AM</div>
-                    <div class="file-size">32 KB</div>
-                </div>
-                
-                <div class="file-item">
-                    <img class="file-icon" src="../assets/images/folder-icon.png" alt="Folder">
-                    <div class="file-name">Old Photos</div>
-                    <div class="file-date">2/28/2025, 5:22 PM</div>
-                    <div class="file-size">Folder</div>
+            <div class="main-content">
+                <div class="file-list">
+                    <div class="file-list-header">
+                        <div class="header-name">Name</div>
+                        <div class="header-date">Date Deleted</div>
+                        <div class="header-size">Size</div>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="status-bar">4 objects</div>
+        <div class="status-bar">
+            <div class="status-message"></div>
+        </div>
     </div>
+
+    <script src="../assets/js/recycle-bin.js"></script>
 </body>
 </html>
